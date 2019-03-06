@@ -1,5 +1,7 @@
 ﻿<div ng-controller="usersController as $ctrl">
-
+    <button class="btn btn-primary mb-3">
+        Add New User
+    </button>
     <div class="table-responsive">
         <table class="table table-bordered table-hover">
             <thead>
@@ -27,7 +29,7 @@
                     <td>{{item.userRoles[0].role.name}}</td>
 
                     <td ng-if="$ctrl.selectedItem">
-                        <button ng-click="$ctrl.dlgEditUser()" class="btn btn-primary">Edit</button>
+                        <button ng-if="$ctrl.selectedItem===item" ng-click="$ctrl.dlgEditUser()" class="btn btn-primary">Edit</button>
                     </td>
                 </tr>
             </tbody>

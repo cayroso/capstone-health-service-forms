@@ -1,7 +1,7 @@
 ﻿
 import app from '../app';
 
-app.controller('usersController', function ($http, toastr) {
+app.controller('usersController', function ($http, toastr, $uibModal) {
     const vm = this;
     vm.selectedItem = null;
 
@@ -53,21 +53,14 @@ app.controller('usersController', function ($http, toastr) {
             }
         });
 
-        modalInst.result.then(function (resp) {
-
-            //var payload = {
-            //    id: vm.selectedItem.reservationId,
-            //    amountPaid: resp.amountPaid,
-            //    referenceNumber: resp.referenceNumber
-            //};
-
-            //$http.post(`api/customer/reservation/pay`, payload)
-            //    .then(function (resp) {
-            //        toastr.success('Reservation paid', 'Payment Success');
-            //        getReservations();
-            //    }, function (err) {
-            //        toastr.danger('An error occured while updating reservation', 'Payment Failed');
-            //    });
+        modalInst.result.then(function (resp) {            
+            $http.post(`api/administrator/users/edit`, resp)
+                .then(function (resp) {
+                    toastr.success('User updated', 'Update Success');
+                    init();
+                }, function (err) {
+                    toastr.error('An error occured while updating user', 'Update Failed');
+                });
         });
     };
 

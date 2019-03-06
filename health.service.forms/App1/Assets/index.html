@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <base href="file:///android_asset/" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" href="scripts/bootstrap/dist/css/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href="scripts/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="scripts/angular-toastr/dist/angular-toastr.min.css" />
+
+</head>
+<body class="container-fluid m-2" ng-controller="mainController as $main">
+
+    <ul class="nav nav-tabs pt-1">
+        <li role="presentation" class="nav-item">
+            <a ng-click="$main.setPage('form1')" ng-class="{'active': $main.selectedPage === 'form1'}" class="nav-link">Form1</a>
+        </li>
+        <li role="presentation" class="nav-item">
+            <a ng-click="$main.setPage('form2')" ng-class="{'active': $main.selectedPage === 'form2'}" class="nav-link">Form2</a>
+        </li>
+        <li role="presentation" class="nav-item">
+            <a ng-click="$main.setPage('form3')" ng-class="{'active': $main.selectedPage === 'form3'}" class="nav-link">Form3</a>
+        </li>
+    </ul>
+    <div class="pt-1" ng-include="$main.includePage">
+        Loading, please wait...
+    </div>
+
+    <script type="text/javascript" src="scripts/jquery/jquery.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/angularjs/angular.min.js"></script>
+    <script type="text/javascript" src="scripts/angular-toastr/dist/angular-toastr.tpls.min.js"></script>
+
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="pages/form1/index.js"></script>
+    <script type="text/javascript" src="pages/form2/index.js"></script>
+    <script type="text/javascript" src="pages/form3/index.js"></script>
+
+</body>
+
+</html>
