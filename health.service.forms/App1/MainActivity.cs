@@ -45,15 +45,15 @@ namespace App1
 
         private class HybridWebViewClient : WebViewClient
         {
-            public override bool ShouldOverrideUrlLoading(WebView view, string url)
-            {
-                const string scheme = "hybrid:";
+            //public override bool ShouldOverrideUrlLoading(WebView view, string url)
+            //{
+            //    const string scheme = "hybrid:";
 
-                if (!url.StartsWith(scheme))
-                    return false;
+            //    if (!url.StartsWith(scheme))
+            //        return false;
 
-                return true;
-            }
+            //    return true;
+            //}
 
         }
     }

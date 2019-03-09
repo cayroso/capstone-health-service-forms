@@ -1,10 +1,10 @@
 ﻿
-import app from '../app';
+import app from '../../app';
 
-app.controller('usersController', function ($http, toastr, $uibModal) {
+function usersController($http, toastr, $uibModal) {
     const vm = this;
     vm.selectedItem = null;
-
+    toastr.success('xx', 'yyxxxxxxxxxxxxy');
     vm.setSelectedItem = function (item) {
         if (item === vm.selectedItem) {
             vm.selectedItem = null;
@@ -17,9 +17,9 @@ app.controller('usersController', function ($http, toastr, $uibModal) {
     vm.dlgAddUser = function () {
         var modalInst = $uibModal.open({
             animation: true,
-            templateUrl: 'app/clientapp/administrator/templates/addUser.html',
+            templateUrl: 'app/clientapp/administrator/pages/users/addUser.html',
             controller: 'addUserModalInstanceCtrl',
-            size: 'lg'            
+            size: 'lg'
         });
 
         modalInst.result.then(function (resp) {
@@ -43,7 +43,7 @@ app.controller('usersController', function ($http, toastr, $uibModal) {
     vm.dlgEditUser = function () {
         var modalInst = $uibModal.open({
             animation: true,
-            templateUrl: 'app/clientapp/administrator/templates/editUser.html',
+            templateUrl: 'app/clientapp/administrator/pages/users/editUser.html',
             controller: 'editUserModalInstanceCtrl',
             size: 'lg',
             resolve: {
@@ -53,7 +53,7 @@ app.controller('usersController', function ($http, toastr, $uibModal) {
             }
         });
 
-        modalInst.result.then(function (resp) {            
+        modalInst.result.then(function (resp) {
             $http.post(`api/administrator/users/edit`, resp)
                 .then(function (resp) {
                     toastr.success('User updated', 'Update Success');
@@ -74,6 +74,12 @@ app.controller('usersController', function ($http, toastr, $uibModal) {
     }
 
     init();
+}
+usersController.$inject = ['$http', 'toastr', '$uibModal'];
+
+app.component('usersComponent', {
+    templateUrl: 'app/clientapp/administrator/pages/users/index.html',
+    controller: usersController
 });
 
 

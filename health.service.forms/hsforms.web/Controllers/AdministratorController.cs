@@ -146,7 +146,7 @@ namespace hsforms.web.Controllers
                 .UserRoles
                 .FirstOrDefaultAsync(p => p.UserId == userId && p.RoleId == roleId);
 
-            if(userRole == null)
+            if (userRole == null)
             {
                 return NotFound();
             }
@@ -160,6 +160,66 @@ namespace hsforms.web.Controllers
 
         #endregion
 
+
+        #region FORM PENI
+
+        [HttpGet("forms/nepis")]
+        public async Task<IActionResult> GetNEPIs()
+        {
+            var data = await _appDbContext
+                .TCL_NEPIs
+                .Include(p => p.Entries)
+                .Include(p => p.User)
+                .ToListAsync();
+
+            return Ok(data);
+        }
+
+        [HttpGet("forms/nepis/{id}")]
+        public async Task<IActionResult> GetNEPI(string id)
+        {
+            var data = await _appDbContext
+                .TCL_NEPIs
+                .Include(p => p.Entries)
+                .Include(p => p.User)
+                .FirstOrDefaultAsync(p => p.TCL_NEPIId == id);
+
+            return Ok(data);
+        }
+
+        #endregion
+
+        #region FORM PENI
+
+        [HttpGet("forms/fps")]
+        public async Task<IActionResult> GetFPs()
+        {
+            var data = await _appDbContext
+                .TCL_FPs
+                .Include(p => p.Entries)
+                .Include(p => p.User)
+                .ToListAsync();
+
+            return Ok(data);
+        }
+
+        #endregion
+
+        #region FORM PENI
+
+        [HttpGet("forms/pncs")]
+        public async Task<IActionResult> GetPNCs()
+        {
+            var data = await _appDbContext
+                .TCL_PNCs
+                .Include(p => p.Entries)
+                .Include(p => p.User)
+                .ToListAsync();
+
+            return Ok(data);
+        }
+
+        #endregion
     }
 
     public class AddUserInfo

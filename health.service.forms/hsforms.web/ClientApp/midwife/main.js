@@ -1,6 +1,6 @@
 ﻿import './app.css';
 import 'jquery';
-import 'fullcalendar/dist/fullcalendar';
+//import 'fullcalendar/dist/fullcalendar';
 
 import 'bootstrap/dist/js/bootstrap';
 import 'bootstrap/dist/js/bootstrap.bundle';

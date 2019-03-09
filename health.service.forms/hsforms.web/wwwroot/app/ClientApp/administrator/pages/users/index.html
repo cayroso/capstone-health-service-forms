@@ -1,0 +1,38 @@
+﻿<div>
+    <button class="btn btn-primary mb-3">
+        Add New User
+    </button>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>UserName</th>
+                    <th>FirstName</th>
+                    <th>MiddleName</th>
+                    <th>LastName</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Mobile</th>
+                    <th>Role</th>
+                    <th ng-if="$ctrl.selectedItem">Action(s)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in $ctrl.items" ng-click="$ctrl.setSelectedItem(item)">
+                    <td>{{item.userName}}</td>
+                    <td>{{item.firstName}}</td>
+                    <td>{{item.middleName}}</td>
+                    <td>{{item.lastName}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.phone}}</td>
+                    <td>{{item.mobile}}</td>
+                    <td>{{item.userRoles[0].role.name}}</td>
+
+                    <td ng-if="$ctrl.selectedItem">
+                        <button ng-if="$ctrl.selectedItem===item" ng-click="$ctrl.dlgEditUser()" class="btn btn-primary">Edit</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

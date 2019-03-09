@@ -28,7 +28,11 @@ namespace hsforms.web.Data
         public string Phone { get; set; }
         public string Mobile { get; set; }
 
-        public ICollection<UserRole> UserRoles { get; set; }
+        public virtual ICollection<UserRole> UserRoles { get; set; }
+
+        public virtual ICollection<TCL_NEPI> NEPIs { get; set; }
+        public virtual ICollection<TCL_FP> FPs { get; set; }
+        public virtual ICollection<TCL_PNC> PNCs { get; set; }
     }
 
     public class Role

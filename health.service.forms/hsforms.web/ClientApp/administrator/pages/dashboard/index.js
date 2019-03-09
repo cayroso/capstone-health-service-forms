@@ -1,12 +1,14 @@
 ﻿
 import $ from 'jquery';
-import app from '../app';
+import app from '../../app';
 
-app.controller('dashboardController', function ($http, toastr) {
+
+function controller($http, toastr) {
     const vm = this;
 
 
     vm.init = function () {
+        
         $http.get('api/administrator/dashboard')
             .then(function (resp) {
                 vm.data = resp.data;
@@ -37,4 +39,11 @@ app.controller('dashboardController', function ($http, toastr) {
 
     vm.init();
 
+}
+
+controller.$inject = ['$http', 'toastr'];
+
+app.component('dashboardComponent', {
+    templateUrl: 'app/clientapp/administrator/pages/dashboard/index.html',
+    controller: controller
 });

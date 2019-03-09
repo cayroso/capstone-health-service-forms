@@ -1,0 +1,48 @@
+﻿<div>
+    <h4>View Form</h4>
+    <a ui-sref="formNepiAddEntry({formId: $ctrl.item.tcL_NEPIId})" class="btn btn-outline-warning">
+        <span class="fas fa-plus"></span>&nbsp;Add
+    </a>
+    <a ui-sref="formNepi" class="btn btn-outline-primary">
+        <span class="fas fa-backspace"></span>&nbsp;Back
+    </a>
+
+    <hr />
+
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Date of Registration</th>
+                    <th>Date of Birth</th>
+                    <th>Name of Child</th>
+                    <th>Name of Mother</th>
+                    <th>Address</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="entry in $ctrl.item.entries">
+                    <td>{{entry.dateOfRegistration | date}}</td>
+                    <td>{{entry.dateOfBirth | date}}</td>
+                    <td>{{entry.nameOfChild}}</td>
+                    <td>{{entry.nameOfMother}}</td>
+                    <td>{{entry.address}}</td>
+
+                    <td class="btn btn-group btn-group-sm">
+                        <a ui-sref="formNepiViewEntry({formId: $ctrl.item.tcL_NEPIId, entryId: entry.tcL_NEPI_EntryId})" class="btn btn-outline-warning">
+                            <span class="fas fa-search"></span>&nbsp;View
+                        </a>
+                        <a ui-sref="formNepiEditEntry({formId: $ctrl.item.tcL_NEPIId, entryId: entry.tcL_NEPI_EntryId})" class="btn btn-outline-warning">
+                            <span class="fas fa-edit"></span>&nbsp;Edit
+                        </a>
+                        <button ng-click="$ctrl.deleteEntry(entry.tcL_NEPI_EntryId)" class="btn btn-outline-danger">
+                            <span class="fas fa-trash"></span>&nbsp;Remove
+                        </button>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
