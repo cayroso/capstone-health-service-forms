@@ -72,7 +72,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/dashboard');
 });
 
-app.controller('mainController', function () {
+app.controller('mainController', function ($http) {
     const vm = this;
     const pagePrefix = 'app/clientapp/administrator/templates/';
     vm.page = `${pagePrefix}/users.html`;
@@ -84,6 +84,21 @@ app.controller('mainController', function () {
 
         event.preventDefault();
     };
+
+    //var payload = {
+    //    items: [
+    //        {
+    //            barangay: 'gg'
+    //        }]
+    //};
+
+    //$http.post('https://localhost:44348/hsforms/api/nepi/upload', payload)
+    //    .then(function (resp) {
+    //        alert('oye1');
+    //    }, function (err) {
+    //        alert('oye2');
+    //    });
+    
 
 });
 

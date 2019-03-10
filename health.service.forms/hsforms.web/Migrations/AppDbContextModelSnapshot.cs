@@ -140,6 +140,8 @@ namespace hsforms.web.Migrations
 
                     b.Property<string>("Barangay");
 
+                    b.Property<DateTime>("LastUploaded");
+
                     b.Property<string>("Municipality");
 
                     b.Property<string>("Province");

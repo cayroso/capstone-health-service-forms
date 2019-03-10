@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
 
 namespace hsforms.web
 {
@@ -39,8 +40,11 @@ namespace hsforms.web
                 opt.UseSqlite(Configuration.GetConnectionString("AppDbContextConnection"));
             });
 
+            //services.AddCors();
+
             services
-                .AddMvc(opt => {
+                .AddMvc(opt =>
+                {
                     opt.EnableEndpointRouting = false;
                 })
                 .AddRazorPagesOptions(opt =>
@@ -51,6 +55,7 @@ namespace hsforms.web
                 .AddJsonOptions(opt =>
                 {
                     opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+                    opt.SerializerSettings.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
                 }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services
@@ -75,12 +80,19 @@ namespace hsforms.web
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseAuthentication();
 
-            app.UseMvc(routes => {
+            //app.UseCors(builder => builder        
+            //    .AllowAnyOrigin()
+            //    .AllowAnyMethod()
+            //    .AllowAnyHeader()
+            //    .AllowCredentials());
+
+            app.UseMvc(routes =>
+            {
                 routes.MapRoute(name: "Default", template: "{controller}/{action=Index}/{id?}");
             });
 

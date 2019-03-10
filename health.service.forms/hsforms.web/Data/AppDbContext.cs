@@ -179,7 +179,7 @@ namespace hsforms.web.Data
         private static void InitForms(AppDbContext context)
         {
 
-            for (var i = 1; i <= 7; i++)
+            for (var i = 1; i <= 3; i++)
             {
                 var form = new TCL_NEPI()
                 {
@@ -188,10 +188,11 @@ namespace hsforms.web.Data
                     Municipality = $"Municipality #{i}",
                     Province = $"Province #{i}",
                     Region = $"Region {i}",
-                    UserId = "midwife1"
+                    UserId = "midwife1",
+                    LastUploaded = DateTime.UtcNow
                 };
 
-                for (var n = 1; n <= 10; n++)
+                for (var n = 1; n <= 5; n++)
                 {
                     var now = DateTime.UtcNow;
 
@@ -257,7 +258,7 @@ namespace hsforms.web.Data
                 context.TCL_NEPIs.Add(form);
             }
 
-            for (var i = 1; i <= 7; i++)
+            for (var i = 1; i <= 3; i++)
             {
                 var form = new TCL_PNC
                 {
@@ -269,7 +270,7 @@ namespace hsforms.web.Data
                     UserId = "midwife1"
                 };
 
-                for (var n = 1; n <= 10; n++)
+                for (var n = 1; n <= 5; n++)
                 {
                     var now = DateTime.Now;
 
@@ -313,7 +314,7 @@ namespace hsforms.web.Data
 
             }
 
-            for (var i = 1; i <= 7; i++)
+            for (var i = 1; i <= 3; i++)
             {
                 var form = new TCL_FP
                 {
@@ -325,7 +326,7 @@ namespace hsforms.web.Data
                     UserId = "midwife1"
                 };
 
-                for (var n = 1; n <= 9; n++)
+                for (var n = 1; n <= 5; n++)
                 {
                     var now = DateTime.UtcNow;
 

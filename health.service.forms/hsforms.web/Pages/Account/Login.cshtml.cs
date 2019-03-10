@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Security.Claims;
+using System.Threading;
 using System.Threading.Tasks;
 using hsforms.web.Data;
 using Microsoft.AspNetCore.Authentication;
@@ -89,6 +90,7 @@ namespace hsforms.web.Pages.Account
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var principal = new ClaimsPrincipal(identity);
 
+                //Thread.CurrentPrincipal = principal;
                 await HttpContext.SignInAsync(principal);
 
 

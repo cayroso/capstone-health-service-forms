@@ -7,6 +7,14 @@ using System.Threading.Tasks;
 
 namespace hsforms.web.Data
 {
+    public enum StatusEnum
+    {
+        Unknown = 0,
+        Created = 1,
+        Modified = 2,
+        Deleted = 3
+    }
+
     /// <summary>
     /// Target Client List for Nutrition and EPI Program
     /// </summary>
@@ -23,6 +31,8 @@ namespace hsforms.web.Data
         public User User { get; set; }
 
         public virtual List<TCL_NEPI_Entry> Entries { get; set; }
+
+        public DateTime LastUploaded { get; set; }
 
         public TCL_NEPI()
         {

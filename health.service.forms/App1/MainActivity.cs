@@ -21,6 +21,8 @@ namespace App1
             SetContentView(Resource.Layout.content_main);
 
             webView = FindViewById<WebView>(Resource.Id.LocalWebView);
+            webView.Settings.LoadWithOverviewMode = true;
+
 
             webView.Settings.JavaScriptEnabled = true;
             webView.Settings.DomStorageEnabled = true;
@@ -28,12 +30,15 @@ namespace App1
             webView.Settings.AllowContentAccess = true;
             webView.Settings.AllowFileAccess = true;
             webView.Settings.AllowFileAccessFromFileURLs = true;
+            webView.Settings.AllowUniversalAccessFromFileURLs = true;
+
 
             var clientHybrid = new HybridWebViewClient();
+            //webView.SetWebViewClient(clientHybrid);
 
             webView.LoadUrl("file:///android_asset/index.html");
-            //const string html = @"<html><head><script type='text/javascript'>window.location.replace('file://android_asset/index.html')</script></head><body></body></html>";
-            //webView.LoadDataWithBaseURL("file://android_asset/", html, "text/html", "UTF-8", null);
+            //const string html = @"<html><head><script type='text/javascript'>window.location.replace('file:///android_asset/index.html')</script></head><body></body></html>";
+            //webView.LoadDataWithBaseURL("file:///android_asset/", html, "text/html", "UTF-8", null);
         }
 
 
@@ -45,14 +50,25 @@ namespace App1
 
         private class HybridWebViewClient : WebViewClient
         {
+            public override WebResourceResponse ShouldInterceptRequest(WebView view, IWebResourceRequest request)
+            {
+                //var url = request.Url.ToString();
+
+                //var http = new HttpClient();
+
+                //return new WebResourceResponse()
+                return base.ShouldInterceptRequest(view, request);
+            }
+
             //public override bool ShouldOverrideUrlLoading(WebView view, string url)
             //{
-            //    const string scheme = "hybrid:";
+            //    return false;
+            //    //const string scheme = "hybrid:";
 
-            //    if (!url.StartsWith(scheme))
-            //        return false;
+            //    //if (!url.StartsWith(scheme))
+            //    //    return false;
 
-            //    return true;
+            //    //return true;
             //}
 
         }

@@ -15,7 +15,7 @@ import './pages/forms';
 
 import './pages/formNepi';
 import './pages/formNepi/add';
-import './pages/formNepi/edit';
+//import './pages/formNepi/edit';
 import './pages/formNepi/view';
 
 import './pages/formNepi/addEntry';

@@ -1,27 +1,53 @@
-﻿<div class="card" ng-controller="form1Controller as $ctrl">
-    <div class="card-header">
-        <div class="row">
-            <div class="col-xs-6">
-                <h4>Form 1</h4>
-            </div>
-            <div class="col-xs-6">
-                <div class="pull-right">
-                    <div class="btn-group btn-group-sm">
-                        <button class="btn btn-danger">
-                            Link
-                        </button>
-                        <button>
-                            Unlink
-                        </button>
-                        <button>Delete</button>
-                    </div>
-
-                    <div class="pull-right">
-                        <button>Close</button>
-                        <button>Add Entry</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+﻿<div ng-controller="form1Controller as $ctrl">
+    <h4><span class="fas fa-file-excel"></span>&nbsp;Target Client List for Nutrition and EPI Program</h4>
+    <div class="btn-group">
+        <button ng-click="$ctrl.back()" class="btn btn-outline-secondary">
+            <span class="fas fa-backward"></span>&nbsp;Back
+        </button>
+        <button ng-click="$ctrl.download()" class="btn btn-outline-danger">
+            <span class="fas fa-download"></span>&nbsp;Download
+        </button>
+        <!--<button ng-click="$ctrl.upload()" class="btn btn-outline-danger">
+            <span class="fas fa-upload"></span>&nbsp;Upload
+        </button>-->
+    </div>
+    <hr />
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Barangay</th>
+                    <th>Municipality</th>
+                    <th>Province</th>
+                    <th>Region</th>
+                    <th>User</th>
+                    <th># of Entry</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="frm in $ctrl.items">
+                    <td>{{frm.barangay}}</td>
+                    <td>{{frm.municipality}}</td>
+                    <td>{{frm.province}}</td>
+                    <td>{{frm.region}}</td>
+                    <td>{{frm.user.firstName}} - {{frm.user.lastName}}</td>
+                    <td>{{frm.entries.length}}</td>
+                    <td>
+                        <span class="btn-group btn-group-sm">
+                            <button ng-click="$ctrl.edit(frm)" class="btn btn-outline-info">
+                                <span class="fas fa-edit"></span>&nbsp;Edit
+                            </button>
+                            <button ng-click="$ctrl.view(frm)" class="btn btn-outline-info">
+                                <span class="fas fa-search"></span>&nbsp;View
+                            </button>
+                            <button ng-click="$ctrl.removeItem(frm)" class="btn btn-outline-info">
+                                <span class="fas fa-trash"></span>&nbsp;Delete
+                            </button>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
