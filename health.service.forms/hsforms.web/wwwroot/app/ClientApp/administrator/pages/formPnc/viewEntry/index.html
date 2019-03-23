@@ -1,0 +1,241 @@
+﻿<div>
+    <h4>View Prenatal Care Entry</h4>
+    <a ui-sref="formPncView({formId: $ctrl.item.tcL_PNCId})" class="btn btn-outline-secondary">
+        <span class="fas fa-backward"></span>&nbsp;Back
+    </a>
+    <a ui-sref="formPncEditEntry({formId: $ctrl.item.tcL_PNCId, entryId: $ctrl.entry.tcL_PNC_EntryId})" class="btn btn-outline-warning">
+        <span class="fas fa-edit"></span>&nbsp;Edit
+    </a>
+
+    <hr />
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <b>Date Of Registration</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dateOfRegistration|date:'MM/dd/yyyy'}}</span>
+        </div>
+        <div class="form-group col-md-6">
+            <b>Family Serial Number</b>
+            <span class="form-control" readonly>{{$ctrl.entry.familySerialNumber}}</span>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <b>Name</b>
+            <span class="form-control" readonly>{{$ctrl.entry.name}}</span>
+        </div>
+        <div class="form-group col-md-6">
+            <b>Address</b>
+            <span class="form-control" readonly>{{$ctrl.entry.address}}</span>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <b>Age</b>
+            <span class="form-control" readonly>{{$ctrl.entry.age}}</span>
+        </div>
+        <div class="form-group col-md-6">
+            <b>LMP Date</b>
+            <span class="form-control" readonly>{{$ctrl.entry.lmpDate|date:'MM/dd/yyyy'}}</span>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <b>LMP GP</b>
+            <span class="form-control" readonly>{{$ctrl.entry.lmpgp}}</span>
+        </div>
+        <div class="form-group col-md-6">
+            <b>EDC</b>
+            <span class="form-control" readonly>{{$ctrl.entry.edc|date:'MM/dd/yyyy'}}</span>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body p-2">
+            <h5 class="card-text">PRENATAL VISIT</h5>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <b>Trimester 1</b>
+                    <span class="form-control" readonly>{{$ctrl.entry.prenatalVisitTrimester1|date:'MM/dd/yyyy'}}</span>
+                </div>
+                <div class="form-group col-md-4">
+                    <b>Trimester 2</b>
+                    <span class="form-control" readonly>{{$ctrl.entry.prenatalVisitTrimester2|date:'MM/dd/yyyy'}}</span>
+                </div><div class="form-group col-md-4">
+                    <b>Trimester 3</b>
+                    <span class="form-control" readonly>{{$ctrl.entry.prenatalVisitTrimester3|date:'MM/dd/yyyy'}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <b>Tetanus Status</b>
+            <span class="form-control" readonly>{{$ctrl.entry.tetanusStatus}}</span>
+        </div>
+
+    </div>
+
+    <div class="card mt-2">
+        <div class="card-body p-2">
+            <h5 class="card-text">TETANUS TOXIOD VACCINE</h5>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <b>1st</b>
+                    <span class="form-control" readonly>{{$ctrl.entry.dateTetanusToxiodVaccine1|date:'MM/dd/yyyy'}}</span>
+                </div>
+                <div class="form-group col-md-4">
+                    <b>2nd</b>
+                    <span class="form-control" readonly>{{$ctrl.entry.dateTetanusToxiodVaccine2|date:'MM/dd/yyyy'}}</span>
+                </div>
+                <div class="form-group col-md-4">
+                    <b>3rd</b>
+                    <span class="form-control" readonly>{{$ctrl.entry.dateTetanusToxiodVaccine3|date:'MM/dd/yyyy'}}</span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <b>4th</b>
+                    <span class="form-control" readonly>{{$ctrl.entry.dateTetanusToxiodVaccine4|date:'MM/dd/yyyy'}}</span>
+                </div>
+                <div class="form-group col-md-4">
+                    <b>5th</b>
+                    <span class="form-control" readonly>{{$ctrl.entry.dateTetanusToxiodVaccine5|date:'MM/dd/yyyy'}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mt-2">
+        <div class="card-body p-2">
+            <h5 class="card-text">IRON WITH FOLIC</h5>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <b>1st Date</b>
+                    <span class="form-control" readonly>{{$ctrl.entry.ironWithFolicDateGiven1|date:'MM/dd/yyyy'}}</span>
+
+                    <b>1st Amount</b>
+                    <span class="form-control" readonly>{{$ctrl.entry.ironWithFolicNumberGiven1}}</span>
+                </div>
+                <div class="form-group col-md-4">
+                    <b>2nd Date</b>
+                    <span class="form-control" readonly>{{$ctrl.entry.ironWithFolicDateGiven2|date:'MM/dd/yyyy'}}</span>
+
+                    <b>2nd Amount</b>
+                    <span class="form-control" readonly>{{$ctrl.entry.ironWithFolicNumberGiven2}}</span>
+                </div>
+                <div class="form-group col-md-4">
+                    <b>3rd Date</b>
+                    <span class="form-control" readonly>{{$ctrl.entry.ironWithFolicDateGiven3|date:'MM/dd/yyyy'}}</span>
+
+                    <b>3rd Amount</b>
+                    <span class="form-control" readonly>{{$ctrl.entry.ironWithFolicNumberGiven3}}</span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <b>4th Date</b>
+                    <span class="form-control" readonly>{{$ctrl.entry.ironWithFolicDateGiven4|date:'MM/dd/yyyy'}}</span>
+
+                    <b>4th Amount</b>
+                    <span class="form-control" readonly>{{$ctrl.entry.ironWithFolicNumberGiven4}}</span>
+                </div>
+                <div class="form-group col-md-4">
+                    <b>5th Date</b>
+                    <span class="form-control" readonly>{{$ctrl.entry.ironWithFolicDateGiven5|date:'MM/dd/yyyy'}}</span>
+
+                    <b>5th Amount</b>
+                    <span class="form-control" readonly>{{$ctrl.entry.ironWithFolicNumberGiven5}}</span>
+                </div>
+                <div class="form-group col-md-4">
+                    <b>6th Date</b>
+                    <span class="form-control" readonly>{{$ctrl.entry.ironWithFolicDateGiven6|date:'MM/dd/yyyy'}}</span>
+
+                    <b>6th Amount</b>
+                    <span class="form-control" readonly>{{$ctrl.entry.ironWithFolicNumberGiven6}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mt-2">
+        <div class="card-body p-2">
+            <h5 class="card-text">STI SURVEILLANCE</h5>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <b>Tested</b>
+                    <span class="form-control" readonly>{{$ctrl.entry.dateSTITested|date:'MM/dd/yyyy'}}</span>
+                </div>
+                <div class="form-group col-md-4">
+                    <b>Result</b>
+                    <span class="form-control" readonly>{{$ctrl.entry.dateSTIResult|date:'MM/dd/yyyy'}}</span>
+                </div>
+                <div class="form-group col-md-4">
+                    <b>Penicillin</b>
+                    <span class="form-control" readonly>{{$ctrl.entry.dateSTIPenicillin|date:'MM/dd/yyyy'}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mt-2">
+        <div class="card-body p-2">
+            <h5 class="card-text">PREGNANCY</h5>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <b>Date Terminated</b>
+                    <span class="form-control" readonly>{{$ctrl.entry.pregnancyDateTerminated|date:'MM/dd/yyyy'}}</span>
+                </div>
+                <div class="form-group col-md-4">
+                    <b>Outcome</b>
+                    <span class="form-control" readonly>{{$ctrl.entry.pregnancyOutcome}}</span>
+                </div>
+                <div class="form-group col-md-4">
+                    <b>Gender</b>
+                    <span class="form-control" readonly>{{$ctrl.entry.pregnancyGender}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mt-2">
+        <div class="card-body p-2">
+            <h5 class="card-text">BIRTH INFO</h5>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <b>Weight</b>
+                    <span class="form-control" readonly>{{$ctrl.entry.birthWeight}}</span>
+                </div>
+                <div class="form-group col-md-6">
+                    <b>Health Facility</b>
+                    <span class="form-control" readonly>{{$ctrl.entry.placeOfHealthFacility}}</span>
+                </div>
+                <div class="form-group col-md-6">
+                    <b>Place Of NIO</b>
+                    <span class="form-control" readonly>{{$ctrl.entry.placeOfNIO}}</span>
+                </div>
+                <div class="form-group col-md-6">
+                    <b>Attended By</b>
+                    <span class="form-control" readonly>{{$ctrl.entry.attendedBy}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <b class="form-check-label" for="remarks">REMARKS</b>
+        <textarea ng-model="$ctrl.entry.remarks" class="form-control" rows="4" value="" id="remarks" readonly></textarea>
+    </div>
+
+</div>

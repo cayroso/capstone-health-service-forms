@@ -168,6 +168,7 @@ namespace hsforms.web.Data
 
         public virtual List<TCL_PNC_Entry> Entries { get; set; }
 
+        public DateTime LastUploaded { get; set; }
         public TCL_PNC()
         {
             TCL_PNCId = string.Empty;
@@ -188,7 +189,7 @@ namespace hsforms.web.Data
         public TCL_PNC TCL_PNC { get; set; }
         //  PART I
 
-        public DateTime? DateOfRegistraiton { get; set; }
+        public DateTime? DateOfRegistration { get; set; }
         public string FamilySerialNumber { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
@@ -262,6 +263,8 @@ namespace hsforms.web.Data
 
         public virtual List<TCL_FP_Entry> Entries { get; set; }
 
+        public DateTime LastUploaded { get; set; }
+
         public TCL_FP()
         {
             TCL_FPId = string.Empty;
@@ -299,7 +302,7 @@ namespace hsforms.web.Data
 
         public DateTime? DateNextService1 { get; set; }
         public DateTime? DateAccomplishedService1 { get; set; }
-        public DateTime? DateNextService2S { get; set; }
+        public DateTime? DateNextService2 { get; set; }
         public DateTime? DateAccomplishedService2 { get; set; }
         public DateTime? DateNextService3 { get; set; }
         public DateTime? DateAccomplishedService3 { get; set; }
@@ -325,6 +328,6 @@ namespace hsforms.web.Data
         public DateTime? DropoutDate { get; set; }
         public string DropoutReason { get; set; }
 
-        public string Remakrs { get; set; }
+        public string Remarks { get; set; }
     } 
 }

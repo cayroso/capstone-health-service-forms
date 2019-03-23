@@ -1,0 +1,188 @@
+﻿<div>
+    <h4>View Family Planning Entry</h4>
+    <a ui-sref="formFpView({formId: $ctrl.item.tcL_FPId})" class="btn btn-outline-secondary">
+        <span class="fas fa-backward"></span>&nbsp;Back
+    </a>
+    <a ui-sref="formFpEditEntry({formId: $ctrl.item.tcL_FPId, entryId: $ctrl.entry.tcL_FP_EntryId})" class="btn btn-outline-warning">
+        <span class="fas fa-edit"></span>&nbsp;Edit
+    </a>
+
+    <hr />
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <b>Date Of Registration</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dateOfRegistration|date:'MM/dd/yyyy'}}</span>
+
+        </div>
+        <div class="form-group col-md-6">
+            <b>familySerialNumber</b>
+            <span class="form-control" readonly>{{$ctrl.entry.familySerialNumber}}</span>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <b>name</b>
+            <input ng-model="$ctrl.entry.name" class="form-control" readonly />
+        </div>
+        <div class="form-group col-md-6">
+            <b>Address</b>
+            <input ng-model="$ctrl.entry.address" class="form-control" readonly />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <b>Birth Date</b>
+            <input ng-model="$ctrl.entry.birthDate" type="date" class="form-control" readonly />
+        </div>
+        <div class="form-group col-md-6">
+            <b>Type Of Client</b>
+            <input ng-model="$ctrl.entry.typeOfClient" type="text" class="form-control" readonly />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <b>Present Method</b>
+            <input ng-model="$ctrl.entry.presentMethod" type="text" class="form-control" readonly/>
+        </div>
+        <div class="form-group col-md-6">
+            <b>Previous Method</b>
+            <input ng-model="$ctrl.entry.previousMethod" type="text" class="form-control" readonly />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <b>Next Service 1</b>            
+            <span class="form-control" readonly>{{$ctrl.entry.dateNextService1|date:'MM/dd/yyyy'}}</span>
+        </div>
+        <div class="form-group col-md-3">
+            <b>Accomplished Service 1</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dateAccomplishedService1|date:'MM/dd/yyyy'}}</span>
+        </div>
+        <div class="form-group col-md-3">
+            <b>Next Service 2</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dateNextService2|date:'MM/dd/yyyy'}}</span>
+        </div>
+        <div class="form-group col-md-3">
+            <b>Accomplished Service 2</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dateAccomplishedService2|date:'MM/dd/yyyy'}}</span>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <b>Next Service 3</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dateNextService3|date:'MM/dd/yyyy'}}</span>
+        </div>
+        <div class="form-group col-md-3">
+            <b>Accomplished Service 3</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dateAccomplishedService3|date:'MM/dd/yyyy'}}</span>
+        </div>
+        <div class="form-group col-md-3">
+            <b>Next Service 4</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dateNextService4|date:'MM/dd/yyyy'}}</span>
+        </div>
+        <div class="form-group col-md-3">
+            <b>Accomplished Service 4</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dateAccomplishedService4|date:'MM/dd/yyyy'}}</span>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <b>Next Service 5</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dateNextService5|date:'MM/dd/yyyy'}}</span>
+        </div>
+        <div class="form-group col-md-3">
+            <b>Accomplished Service 5</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dateAccomplishedService5|date:'MM/dd/yyyy'}}</span>
+        </div>
+        <div class="form-group col-md-3">
+            <b>Next Service 6</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dateNextService6|date:'MM/dd/yyyy'}}</span>
+        </div>
+        <div class="form-group col-md-3">
+            <b>Accomplished Service 6</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dateAccomplishedService6|date:'MM/dd/yyyy'}}</span>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <b>Next Service 7</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dateNextService7|date:'MM/dd/yyyy'}}</span>
+        </div>
+        <div class="form-group col-md-3">
+            <b>Accomplished Service 7</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dateAccomplishedService7|date:'MM/dd/yyyy'}}</span>
+        </div>
+        <div class="form-group col-md-3">
+            <b>Next Service 8</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dateNextService8|date:'MM/dd/yyyy'}}</span>
+        </div>
+        <div class="form-group col-md-3">
+            <b>Accomplished Service 8</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dateAccomplishedService8|date:'MM/dd/yyyy'}}</span>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <b>Next Service 9</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dateNextService9|date:'MM/dd/yyyy'}}</span>
+        </div>
+        <div class="form-group col-md-3">
+            <b>Accomplished Service 9</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dateAccomplishedService9|date:'MM/dd/yyyy'}}</span>
+        </div>
+        <div class="form-group col-md-3">
+            <b>Next Service 10</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dateNextService10|date:'MM/dd/yyyy'}}</span>
+        </div>
+        <div class="form-group col-md-3">
+            <b>Accomplished Service 10</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dateAccomplishedService10|date:'MM/dd/yyyy'}}</span>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <b>Next Service 11</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dateNextService11|date:'MM/dd/yyyy'}}</span>
+        </div>
+        <div class="form-group col-md-3">
+            <b>Accomplished Service 11</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dateAccomplishedService11|date:'MM/dd/yyyy'}}</span>
+        </div>
+        <div class="form-group col-md-3">
+            <b>Next Service 12</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dateNextService12|date:'MM/dd/yyyy'}}</span>
+        </div>
+        <div class="form-group col-md-3">
+            <b>Accomplished Service 12</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dateAccomplishedService12|date:'MM/dd/yyyy'}}</span>
+        </div>
+    </div>
+
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <b>DropoutDate</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dropoutDate|date:'MM/dd/yyyy'}}</span>
+        </div>
+        <div class="form-group col-md-6">
+            <b>DropoutDate</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dropoutReason}}</span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <b class="form-check-label" for="remarks">REMARKS</b>
+        <textarea ng-model="$ctrl.entry.remarks" class="form-control" rows="4" id="remarks" readonly></textarea>
+    </div>
+
+
+</div>

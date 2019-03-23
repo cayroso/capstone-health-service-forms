@@ -1,5 +1,5 @@
 ﻿<div>
-    <h4>View Form</h4>
+    <h4>View Nutrition and EPI</h4>
 
     <div class="btn-group">
         <a ui-sref="formNepi" class="btn btn-outline-secondary">
@@ -18,19 +18,19 @@
     <div class="form-row">
         <div class="form-group col-md-3">
             <b>BARANGAY</b>
-            <span class="form-control">{{$ctrl.item.barangay}}</span>
+            <span class="form-control" readonly>{{$ctrl.item.barangay}}</span>
         </div>
         <div class="form-group col-md-3">
             <b>MUNICIPALITY</b>
-            <span class="form-control">{{$ctrl.item.municipality}}</span>
+            <span class="form-control" readonly>{{$ctrl.item.municipality}}</span>
         </div>
         <div class="form-group col-md-3">
             <b>PROVINCE</b>
-            <span class="form-control">{{$ctrl.item.province}}</span>
+            <span class="form-control" readonly>{{$ctrl.item.province}}</span>
         </div>
         <div class="form-group col-md-3">
             <b>REGION</b>
-            <span class="form-control">{{$ctrl.item.region}}</span>
+            <span class="form-control" readonly>{{$ctrl.item.region}}</span>
         </div>
     </div>
 
@@ -54,16 +54,18 @@
                     <td>{{entry.nameOfMother}}</td>
                     <td>{{entry.address}}</td>
 
-                    <td class="btn btn-group btn-group-sm">
-                        <a ui-sref="formNepiViewEntry({formId: $ctrl.item.tcL_NEPIId, entryId: entry.tcL_NEPI_EntryId})" class="btn btn-outline-warning">
-                            <span class="fas fa-search"></span>&nbsp;View
-                        </a>
-                        <a ui-sref="formNepiEditEntry({formId: $ctrl.item.tcL_NEPIId, entryId: entry.tcL_NEPI_EntryId})" class="btn btn-outline-warning">
-                            <span class="fas fa-edit"></span>&nbsp;Edit
-                        </a>
-                        <button ng-click="$ctrl.deleteEntry(entry.tcL_NEPI_EntryId)" class="btn btn-outline-danger">
-                            <span class="fas fa-trash"></span>&nbsp;Remove
-                        </button>
+                    <td >
+                        <span class="btn btn-group btn-group-sm">
+                            <a ui-sref="formNepiViewEntry({formId: $ctrl.item.tcL_NEPIId, entryId: entry.tcL_NEPI_EntryId})" class="btn btn-outline-warning">
+                                <span class="fas fa-search"></span>&nbsp;View
+                            </a>
+                            <a ui-sref="formNepiEditEntry({formId: $ctrl.item.tcL_NEPIId, entryId: entry.tcL_NEPI_EntryId})" class="btn btn-outline-warning">
+                                <span class="fas fa-edit"></span>&nbsp;Edit
+                            </a>
+                            <button ng-click="$ctrl.deleteEntry(entry.tcL_NEPI_EntryId)" class="btn btn-outline-danger">
+                                <span class="fas fa-trash"></span>&nbsp;Remove
+                            </button>
+                        </span>
                     </td>
 
                 </tr>

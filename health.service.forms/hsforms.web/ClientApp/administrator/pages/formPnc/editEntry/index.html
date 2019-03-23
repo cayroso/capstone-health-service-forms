@@ -1,0 +1,237 @@
+﻿
+<div>
+
+    <h4>Edit Prenatal Care Entry</h4>
+    <a ui-sref="formPncViewEntry({formId: $ctrl.formId, entryId: $ctrl.entryId})" class="btn btn-outline-secondary">
+        <span class="fas fa-backward"></span>&nbsp;Back
+    </a>
+    <button ng-click="$ctrl.saveEntry()" class="btn btn-warning">
+        <span class="fas fa-save"></span>&nbsp;Save
+    </button>
+    <hr />
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <b>Date Of Registration</b>
+            <input ng-model="$ctrl.entry.dateOfRegistration" type="date" class="form-control" />
+        </div>
+        <div class="form-group col-md-6">
+            <b>Family Serial Number</b>
+            <input ng-model="$ctrl.entry.familySerialNumber" type="text" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <b>Name</b>
+            <input ng-model="$ctrl.entry.name" type="text" class="form-control" />
+        </div>
+        <div class="form-group col-md-6">
+            <b>Address</b>
+            <input ng-model="$ctrl.entry.address" type="text" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <b>Age</b>
+            <input ng-model="$ctrl.entry.age" type="number" class="form-control" />
+        </div>
+        <div class="form-group col-md-6">
+            <b>LMP Date</b>
+            <input ng-model="$ctrl.entry.lmpDate" type="date" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <b>LMP GP</b>
+            <input ng-model="$ctrl.entry.lmpgp" type="text" class="form-control" />
+        </div>
+        <div class="form-group col-md-6">
+            <b>EDC</b>
+            <input ng-model="$ctrl.entry.edc" type="date" class="form-control" />
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body p-2">
+            <h5 class="card-text">PRENATAL VISIT</h5>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <b>Trimester 1</b>
+                    <input ng-model="$ctrl.entry.prenatalVisitTrimester1" type="date" class="form-control" />
+                </div>
+                <div class="form-group col-md-4">
+                    <b>Trimester 2</b>
+                    <input ng-model="$ctrl.entry.prenatalVisitTrimester2" type="date" class="form-control" />
+                </div><div class="form-group col-md-4">
+                    <b>Trimester 3</b>
+                    <input ng-model="$ctrl.entry.prenatalVisitTrimester3" type="date" class="form-control" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <b>Tetanus Status</b>
+            <input ng-model="$ctrl.entry.tetanusStatus" type="text" class="form-control" />
+        </div>
+
+    </div>
+
+    <div class="card mt-2">
+        <div class="card-body p-2">
+            <h5 class="card-text">TETANUS TOXIOD VACCINE</h5>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <b>1st</b>
+                    <input ng-model="$ctrl.entry.dateTetanusToxiodVaccine1" type="date" class="form-control" />
+                </div>
+                <div class="form-group col-md-4">
+                    <b>2nd</b>
+                    <input ng-model="$ctrl.entry.dateTetanusToxiodVaccine2" type="date" class="form-control" />
+                </div>
+                <div class="form-group col-md-4">
+                    <b>3rd</b>
+                    <input ng-model="$ctrl.entry.dateTetanusToxiodVaccine3" type="date" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <b>4th</b>
+                    <input ng-model="$ctrl.entry.dateTetanusToxiodVaccine4" type="date" class="form-control" />
+                </div>
+                <div class="form-group col-md-4">
+                    <b>5th</b>
+                    <input ng-model="$ctrl.entry.dateTetanusToxiodVaccine5" type="date" class="form-control" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mt-2">
+        <div class="card-body p-2">
+            <h5 class="card-text">IRON WITH FOLIC</h5>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <b>1st Date</b>
+                    <input ng-model="$ctrl.entry.ironWithFolicDateGiven1" type="date" class="form-control" />
+
+                    <b>1st Amount</b>
+                    <input ng-model="$ctrl.entry.ironWithFolicNumberGiven1" type="number" class="form-control" />
+                </div>
+                <div class="form-group col-md-4">
+                    <b>2nd Date</b>
+                    <input ng-model="$ctrl.entry.ironWithFolicDateGiven2" type="date" class="form-control" />
+                    <b>2nd Amount</b>
+                    <input ng-model="$ctrl.entry.ironWithFolicNumberGiven2" type="number" class="form-control" />
+                </div>
+                <div class="form-group col-md-4">
+                    <b>3rd Date</b>
+                    <input ng-model="$ctrl.entry.ironWithFolicDateGiven3" type="date" class="form-control" />
+                    <b>3rd Amount</b>
+                    <input ng-model="$ctrl.entry.ironWithFolicNumberGiven3" type="number" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <b>4th Date</b>
+                    <input ng-model="$ctrl.entry.ironWithFolicDateGiven4" type="date" class="form-control" />
+                    <b>4th Amount</b>
+                    <input ng-model="$ctrl.entry.ironWithFolicNumberGiven4" type="number" class="form-control" />
+                </div>
+                <div class="form-group col-md-4">
+                    <b>5th Date</b>
+                    <input ng-model="$ctrl.entry.ironWithFolicDateGiven5" type="date" class="form-control" />
+                    <b>5th Amount</b>
+                    <input ng-model="$ctrl.entry.ironWithFolicNumberGiven5" type="number" class="form-control" />
+                </div>
+                <div class="form-group col-md-4">
+                    <b>6th Date</b>
+                    <input ng-model="$ctrl.entry.ironWithFolicDateGiven6" type="date" class="form-control" />
+                    <b>6th Amount</b>
+                    <input ng-model="$ctrl.entry.ironWithFolicNumberGiven6" type="number" class="form-control" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mt-2">
+        <div class="card-body p-2">
+            <h5 class="card-text">STI SURVEILLANCE</h5>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <b>Tested</b>
+                    <input ng-model="$ctrl.entry.dateSTITested" type="date" class="form-control" />
+                </div>
+                <div class="form-group col-md-4">
+                    <b>Result</b>
+                    <input ng-model="$ctrl.entry.dateSTIResult" type="date" class="form-control" />
+                </div>
+                <div class="form-group col-md-4">
+                    <b>Penicillin</b>
+                    <input ng-model="$ctrl.entry.dateSTIPenicillin" type="date" class="form-control" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mt-2">
+        <div class="card-body p-2">
+            <h5 class="card-text">PREGNANCY</h5>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <b>Date Terminated</b>
+                    <input ng-model="$ctrl.entry.pregnancyDateTerminated" type="date" class="form-control" />
+                </div>
+                <div class="form-group col-md-4">
+                    <b>Outcome</b>
+                    <input ng-model="$ctrl.entry.pregnancyOutcome" type="text" class="form-control" />
+                </div>
+                <div class="form-group col-md-4">
+                    <b>Gender</b>
+                    <input ng-model="$ctrl.entry.pregnancyGender" type="text" class="form-control" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mt-2">
+        <div class="card-body p-2">
+            <h5 class="card-text">BIRTH INFO</h5>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <b>Weight</b>
+                    <input ng-model="$ctrl.entry.birthWeight" type="number" class="form-control" />
+                </div>
+                <div class="form-group col-md-6">
+                    <b>Health Facility</b>
+                    <input ng-model="$ctrl.entry.placeOfHealthFacility" type="text" class="form-control" />
+                </div>
+                <div class="form-group col-md-6">
+                    <b>Place Of NIO</b>
+                    <input ng-model="$ctrl.entry.placeOfNIO" type="text" class="form-control" />
+                </div>
+                <div class="form-group col-md-6">
+                    <b>Attended By</b>
+                    <input ng-model="$ctrl.entry.attendedBy" type="text" class="form-control" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <b class="form-check-label" for="remarks">REMARKS</b>
+        <textarea ng-model="$ctrl.entry.remarks" class="form-control" rows="4" value="" id="remarks"></textarea>
+    </div>
+
+</div>

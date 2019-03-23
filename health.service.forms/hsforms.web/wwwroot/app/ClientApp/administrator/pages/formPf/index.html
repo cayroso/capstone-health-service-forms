@@ -1,3 +1,42 @@
 ﻿<div>
-    formPf
+    <h4>PF</h4>
+    <a ui-sref="formNepiAdd" class="btn btn-outline-primary">Add</a>
+    <hr />
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Barangay</th>
+                <th>Municipality</th>
+                <th>Province</th>
+                <th>Region</th>
+                <th>User</th>
+                <th># of Entry</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="frm in $ctrl.items">
+                <td>{{frm.barangay}}</td>
+                <td>{{frm.municipality}}</td>
+                <td>{{frm.province}}</td>
+                <td>{{frm.region}}</td>
+                <td>{{frm.user.firstName}} - {{frm.user.lastName}}</td>
+                <td>{{frm.entries.length}}</td>
+                <td class="btn-group btn-group-sm">
+                    <a ui-sref="formNepiEdit({formId: frm.tcL_NEPIId})" class="btn btn-outline-info">
+                        <span class="fas fa-edit"></span>&nbsp;Edit
+                    </a>
+                    <a ui-sref="formNepiView({formId: frm.tcL_NEPIId})" class="btn btn-outline-info">
+                        <span class="fas fa-search"></span>&nbsp;View
+                    </a>
+                    <a ui-sref="formNepiView({formId: frm.tcL_NEPIId})" class="btn btn-outline-info">
+                        <span class="fas fa-print"></span>&nbsp;Print
+                    </a>
+                    <a ui-sref="formNepiView({formId: frm.tcL_NEPIId})" class="btn btn-outline-info">
+                        <span class="fas fa-trash"></span>&nbsp;Delete
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

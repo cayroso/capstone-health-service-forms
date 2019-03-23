@@ -1,14 +1,23 @@
 ﻿import 'jquery';
 import app from '../../app';
 
-function controller(toastr) {
+function controller($http, toastr) {
+    const vm = this;
 
-    toastr.success('formPnc');
+    vm.init = function () {
+        $http.get('api/administrator/forms/pncs')
+            .then(function (resp) {
+                vm.items = resp.data;
+            });
+    };
+
+    vm.init();
 }
 
-controller.$inject = ['toastr'];
+controller.$inject = ['$http', 'toastr'];
 
 app.component('formPncComponent', {
     templateUrl: 'app/clientapp/administrator/pages/formPnc/index.html',
     controller: controller
 });
+

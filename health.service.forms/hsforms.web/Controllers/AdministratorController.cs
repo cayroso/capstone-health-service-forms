@@ -161,7 +161,7 @@ namespace hsforms.web.Controllers
         #endregion
 
 
-        #region FORM PENI
+        #region FORM Nutrition and EPI
 
         [HttpGet("forms/nepis")]
         public async Task<IActionResult> GetNEPIs()
@@ -189,7 +189,7 @@ namespace hsforms.web.Controllers
 
         #endregion
 
-        #region FORM PENI
+        #region FORM Family Planning
 
         [HttpGet("forms/fps")]
         public async Task<IActionResult> GetFPs()
@@ -203,9 +203,21 @@ namespace hsforms.web.Controllers
             return Ok(data);
         }
 
+        [HttpGet("forms/fps/{id}")]
+        public async Task<IActionResult> GetFp(string id)
+        {
+            var data = await _appDbContext
+                .TCL_FPs
+                .Include(p => p.Entries)
+                .Include(p => p.User)
+                .FirstOrDefaultAsync(p => p.TCL_FPId == id);
+
+            return Ok(data);
+        }
+
         #endregion
 
-        #region FORM PENI
+        #region FORM Prenatal Care
 
         [HttpGet("forms/pncs")]
         public async Task<IActionResult> GetPNCs()
@@ -219,6 +231,51 @@ namespace hsforms.web.Controllers
             return Ok(data);
         }
 
+        [HttpGet("forms/pncs/{id}")]
+        public async Task<IActionResult> GetPNC(string id)
+        {
+            var data = await _appDbContext
+                .TCL_PNCs
+                .Include(p => p.Entries)
+                .Include(p => p.User)
+                .FirstOrDefaultAsync(p => p.TCL_PNCId == id);
+
+            return Ok(data);
+        }
+
+        #endregion
+
+
+        #region Dashboard
+
+        [HttpGet("dashboard")]
+        public async Task<IActionResult> Dashboard()
+        {
+            var fps = await _appDbContext.TCL_FPs.Include(p => p.Entries).ToListAsync();
+            var nepis = await _appDbContext.TCL_NEPIs.Include(p => p.Entries).ToListAsync();
+            var pncs = await _appDbContext.TCL_PNCs.Include(p => p.Entries).ToListAsync();
+
+            var dashboard = new DashboardInfo
+            {
+                FpCount = fps.Count(),
+                FpEntryCount = fps.Sum(p => p.Entries.Count()),
+
+                NepiCount = nepis.Count(),
+                NepiEntryCount = nepis.Sum(p => p.Entries.Count()),
+
+                PncCount = pncs.Count(),
+                PncEntryCount = pncs.Sum(p => p.Entries.Count()),
+
+                LastestFpId = fps.OrderByDescending(p=>p.LastUploaded).FirstOrDefault().TCL_FPId,
+
+                LastestNepiId = nepis.OrderByDescending(p => p.LastUploaded).FirstOrDefault().TCL_NEPIId,
+
+                LastestPncId = pncs.OrderByDescending(p => p.LastUploaded).FirstOrDefault().TCL_PNCId,
+                
+            };
+
+            return Ok(dashboard);
+        }
         #endregion
     }
 
@@ -250,5 +307,27 @@ namespace hsforms.web.Controllers
         public string Phone { get; set; }
         public string Mobile { get; set; }
 
+    }
+
+
+    public class DashboardInfo
+    {
+        public int FpCount { get; set; }
+        public int FpEntryCount { get; set; }
+
+        public int NepiCount { get; set; }
+        public int NepiEntryCount { get; set; }
+
+        public int PncCount { get; set; }
+        public int PncEntryCount { get; set; }
+
+        public string LastestFpId { get; set; }
+        public string LastestFpEntryId { get; set; }
+
+        public string LastestNepiId { get; set; }
+        public string LastestNepiEntryId { get; set; }
+
+        public string LastestPncId { get; set; }
+        public string LastestPncEntryId { get; set; }
     }
 }

@@ -1,0 +1,189 @@
+﻿<div>
+    <h4>Edit Family Planning Entry</h4>
+    <a ui-sref="formFpViewEntry({formId: $ctrl.formId, entryId: $ctrl.entryId})" class="btn btn-outline-secondary">
+        <span class="fas fa-backward"></span>&nbsp;Back
+    </a>
+    <button ng-click="$ctrl.saveEntry()" class="btn btn-warning">
+        <span class="fas fa-save"></span>&nbsp;Save
+    </button>
+    <hr />
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <b>Date Of Registration</b>
+            <input ng-model="$ctrl.entry.dateOfRegistration" type="date" class="form-control" />
+        </div>
+        <div class="form-group col-md-6">
+            <b>Family Serial Number</b>
+            <input ng-model="$ctrl.entry.familySerialNumber" type="text" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <b>Name</b>
+            <input ng-model="$ctrl.entry.name" type="text" class="form-control" />
+        </div>
+        <div class="form-group col-md-6">
+            <b>Address</b>
+            <input ng-model="$ctrl.entry.address" type="text" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <b>Birth Date</b>
+            <input ng-model="$ctrl.entry.birthDate" type="date" class="form-control" />
+        </div>
+        <div class="form-group col-md-6">
+            <b>Type Of Client</b>
+            <input ng-model="$ctrl.entry.typeOfClient" type="text" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <b>Present Method</b>
+            <input ng-model="$ctrl.entry.presentMethod" type="text" class="form-control" />
+        </div>
+        <div class="form-group col-md-6">
+            <b>Previous Method</b>
+            <input ng-model="$ctrl.entry.previousMethod" type="text" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <b>Next Service 1</b>
+            <input ng-model="$ctrl.entry.dateNextService1" type="date" class="form-control" />
+        </div>
+        <div class="form-group col-md-3">
+            <b>Accomplished Service 1</b>
+            <input ng-model="$ctrl.entry.dateAccomplishedService1" type="date" class="form-control" />
+        </div>
+        <div class="form-group col-md-3">
+            <b>Next Service 2</b>
+            <input ng-model="$ctrl.entry.dateNextService2" type="date" class="form-control" />
+        </div>
+        <div class="form-group col-md-3">
+            <b>Accomplished Service 2</b>
+            <input ng-model="$ctrl.entry.dateAccomplishedService2" type="date" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <b>Next Service 3</b>
+            <input ng-model="$ctrl.entry.dateNextService3" type="date" class="form-control" />
+        </div>
+        <div class="form-group col-md-3">
+            <b>Accomplished Service 3</b>
+            <input ng-model="$ctrl.entry.dateAccomplishedService3" type="date" class="form-control" />
+        </div>
+        <div class="form-group col-md-3">
+            <b>Next Service 4</b>
+            <input ng-model="$ctrl.entry.dateNextService4" type="date" class="form-control" />
+        </div>
+        <div class="form-group col-md-3">
+            <b>Accomplished Service 4</b>
+            <input ng-model="$ctrl.entry.dateAccomplishedService4" type="date" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <b>Next Service 5</b>
+            <input ng-model="$ctrl.entry.dateNextService5" type="date" class="form-control" />
+        </div>
+        <div class="form-group col-md-3">
+            <b>Accomplished Service 5</b>
+            <input ng-model="$ctrl.entry.dateAccomplishedService5" type="date" class="form-control" />
+        </div>
+        <div class="form-group col-md-3">
+            <b>Next Service 6</b>
+            <input ng-model="$ctrl.entry.dateNextService6" type="date" class="form-control" />
+        </div>
+        <div class="form-group col-md-3">
+            <b>Accomplished Service 6</b>
+            <input ng-model="$ctrl.entry.dateAccomplishedService6" type="date" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <b>Next Service 7</b>
+            <input ng-model="$ctrl.entry.dateNextService7" type="date" class="form-control" />
+        </div>
+        <div class="form-group col-md-3">
+            <b>Accomplished Service 7</b>
+            <input ng-model="$ctrl.entry.dateAccomplishedService7" type="date" class="form-control" />
+        </div>
+        <div class="form-group col-md-3">
+            <b>Next Service 8</b>
+            <input ng-model="$ctrl.entry.dateNextService8" type="date" class="form-control" />
+        </div>
+        <div class="form-group col-md-3">
+            <b>Accomplished Service 8</b>
+            <input ng-model="$ctrl.entry.dateAccomplishedService8" type="date" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <b>Next Service 9</b>
+            <input ng-model="$ctrl.entry.dateNextService9" type="date" class="form-control" />
+        </div>
+        <div class="form-group col-md-3">
+            <b>Accomplished Service 9</b>
+            <input ng-model="$ctrl.entry.dateAccomplishedService9" type="date" class="form-control" />
+        </div>
+        <div class="form-group col-md-3">
+            <b>Next Service 10</b>
+            <input ng-model="$ctrl.entry.dateNextService10" type="date" class="form-control" />
+        </div>
+        <div class="form-group col-md-3">
+            <b>Accomplished Service 10</b>
+            <input ng-model="$ctrl.entry.dateAccomplishedService10" type="date" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <b>Next Service 11</b>
+            <input ng-model="$ctrl.entry.dateNextService11" type="date" class="form-control" />
+        </div>
+        <div class="form-group col-md-3">
+            <b>Accomplished Service 11</b>
+            <input ng-model="$ctrl.entry.dateAccomplishedService11" type="date" class="form-control" />
+        </div>
+        <div class="form-group col-md-3">
+            <b>Next Service 12</b>
+            <input ng-model="$ctrl.entry.dateNextService12" type="date" class="form-control" />
+        </div>
+        <div class="form-group col-md-3">
+            <b>Accomplished Service 12</b>
+            <input ng-model="$ctrl.entry.dateAccomplishedService12" type="date" class="form-control" />
+        </div>
+    </div>
+
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <b>DropoutDate</b>
+            <input ng-model="$ctrl.entry.dropoutDate" type="date" class="form-control" />
+        </div>
+        <div class="form-group col-md-6">
+            <b>Dropout Reason</b>
+            <input ng-model="$ctrl.entry.dropoutReason" type="text" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <b class="form-check-label" for="remarks">REMARKS</b>
+        <textarea ng-model="$ctrl.entry.remarks" class="form-control" rows="4" value="" id="remarks"></textarea>
+    </div>
+
+
+
+
+
+</div>

@@ -1,3 +1,44 @@
 ﻿<div>
-    formPnc
+    <h4>
+        <span class="fas fa-fw fa-file"></span>&nbsp;Family Planning&nbsp;<a ui-sref="formPncAdd" class="btn btn-outline-primary"><span class="fas fa-fw fa-plus"></span>&nbsp;Add</a>
+    </h4>
+    
+    <hr />
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Barangay</th>
+                <th>Municipality</th>
+                <th>Province</th>
+                <th>Region</th>
+                <th>User</th>
+                <th># of Entry</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="frm in $ctrl.items">
+                <td>{{frm.barangay}}</td>
+                <td>{{frm.municipality}}</td>
+                <td>{{frm.province}}</td>
+                <td>{{frm.region}}</td>
+                <td>{{frm.user.firstName}} - {{frm.user.lastName}}</td>
+                <td>{{frm.entries.length}}</td>
+                <td class="btn-group btn-group-sm">
+                    <a ui-sref="formPncEdit({formId: frm.tcL_PNCId})" class="btn btn-outline-info">
+                        <span class="fas fa-edit"></span>&nbsp;Edit
+                    </a>
+                    <a ui-sref="formPncView({formId: frm.tcL_PNCId})" class="btn btn-outline-info">
+                        <span class="fas fa-search"></span>&nbsp;View
+                    </a>
+                    <a ui-sref="formPncView({formId: frm.tcL_PNCId})" class="btn btn-outline-info">
+                        <span class="fas fa-print"></span>&nbsp;Print
+                    </a>
+                    <a ui-sref="formPncView({formId: frm.tcL_PNCId})" class="btn btn-outline-info">
+                        <span class="fas fa-trash"></span>&nbsp;Delete
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

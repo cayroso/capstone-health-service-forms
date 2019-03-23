@@ -12,26 +12,7 @@ function controller($http, toastr) {
         $http.get('api/administrator/dashboard')
             .then(function (resp) {
                 vm.data = resp.data;
-
-                let events = [];
-
-                for (var i = 0; i < resp.data.reservations.length; i++) {
-                    var item = resp.data.reservations[i];
-
-                    events.push({
-                        title: item.package.name,
-                        start: $.fullCalendar.moment(item.dateStart),
-                        end: $.fullCalendar.moment(item.dateEnd)
-                    });
-                }
-
-                $('#calendar').fullCalendar({
-                    //header: { center: 'month,agendaWeek' },
-                    defaultView: 'month',
-                    //minTime: '07:00:00',
-                    //maxTime: '22:59:00',
-                    events: events
-                });
+                
             }, function (err) {
                 toastr.error('error occured');
             });

@@ -51,9 +51,39 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     });
 
     $stateProvider.state({
-        name: 'formPf',
-        url: '/formPf',
-        component: 'formPfComponent'
+        name: 'formFp',
+        url: '/formFp',
+        component: 'formFpComponent'
+    });
+    $stateProvider.state({
+        name: 'formFpAdd',
+        url: '/formFp/add',
+        component: 'formFpAddComponent'
+    });
+    $stateProvider.state({
+        name: 'formFpEdit',
+        url: '/formFp/{formId}/edit',
+        component: 'formFpEditComponent'
+    });
+    $stateProvider.state({
+        name: 'formFpView',
+        url: '/formFp/{formId}',
+        component: 'formFpViewComponent'
+    });
+    $stateProvider.state({
+        name: 'formFpAddEntry',
+        url: '/formFp/{formId}/entry',
+        component: 'formFpAddEntryComponent'
+    });
+    $stateProvider.state({
+        name: 'formFpEditEntry',
+        url: '/formFp/{formId}/entry/{entryId}/edit',
+        component: 'formFpEditEntryComponent'
+    });
+    $stateProvider.state({
+        name: 'formFpViewEntry',
+        url: '/formFp/{formId}/entry/{entryId}',
+        component: 'formFpViewEntryComponent'
     });
 
     $stateProvider.state({
@@ -61,7 +91,37 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         url: '/formPnc',
         component: 'formPncComponent'
     });
-    
+    $stateProvider.state({
+        name: 'formPncAdd',
+        url: '/formPnc/add',
+        component: 'formPncAddComponent'
+    });
+    $stateProvider.state({
+        name: 'formPncEdit',
+        url: '/formPnc/{formId}/edit',
+        component: 'formPncEditComponent'
+    });
+    $stateProvider.state({
+        name: 'formPncView',
+        url: '/formPnc/{formId}',
+        component: 'formPncViewComponent'
+    });
+    $stateProvider.state({
+        name: 'formPncAddEntry',
+        url: '/formPnc/{formId}/entry',
+        component: 'formPncAddEntryComponent'
+    });
+    $stateProvider.state({
+        name: 'formPncEditEntry',
+        url: '/formPnc/{formId}/entry/{entryId}/edit',
+        component: 'formPncEditEntryComponent'
+    });
+    $stateProvider.state({
+        name: 'formPncViewEntry',
+        url: '/formPnc/{formId}/entry/{entryId}',
+        component: 'formPncViewEntryComponent'
+    });
+
 
     $stateProvider.state({
         name: 'users',

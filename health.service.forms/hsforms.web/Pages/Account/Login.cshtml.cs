@@ -87,11 +87,17 @@ namespace hsforms.web.Pages.Account
                     });
                 }
 
-                var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-                var principal = new ClaimsPrincipal(identity);
+                var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);                
+                var principal = new ClaimsPrincipal(claimsIdentity);
+                var authProperties = new AuthenticationProperties
+                {
 
-                //Thread.CurrentPrincipal = principal;
-                await HttpContext.SignInAsync(principal);
+                };
+
+                await HttpContext.SignInAsync(
+                    CookieAuthenticationDefaults.AuthenticationScheme,
+                    new ClaimsPrincipal(claimsIdentity),
+                    authProperties);
 
 
                 #endregion

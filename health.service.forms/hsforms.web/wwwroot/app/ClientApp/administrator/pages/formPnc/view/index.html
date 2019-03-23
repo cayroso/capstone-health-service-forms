@@ -1,0 +1,75 @@
+﻿<div>
+    <h4>View Prenatal Care Form</h4>
+
+    <div class="btn-group">
+        <a ui-sref="formPnc" class="btn btn-outline-secondary">
+            <span class="fas fa-backward"></span>&nbsp;Back
+        </a>
+        <a ui-sref="formPncAddEntry({formId: $ctrl.item.tcL_PNCId})" class="btn btn-outline-warning">
+            <span class="fas fa-plus"></span>&nbsp;Add Entry
+        </a>
+        <a ui-sref="formPncEdit({formId: $ctrl.item.tcL_PNCId})" class="btn btn-outline-warning">
+            <span class="fas fa-edit"></span>&nbsp;Edit
+        </a>
+    </div>
+
+    <hr />
+
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <b>BARANGAY</b>
+            <span class="form-control" readonly>{{$ctrl.item.barangay}}</span>
+        </div>
+        <div class="form-group col-md-3">
+            <b>MUNICIPALITY</b>
+            <span class="form-control" readonly>{{$ctrl.item.municipality}}</span>
+        </div>
+        <div class="form-group col-md-3">
+            <b>PROVINCE</b>
+            <span class="form-control" readonly>{{$ctrl.item.province}}</span>
+        </div>
+        <div class="form-group col-md-3">
+            <b>REGION</b>
+            <span class="form-control" readonly>{{$ctrl.item.region}}</span>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Date of Registration</th>
+                    <th>Family Serial Number</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Age</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="entry in $ctrl.item.entries">
+                    <td>{{entry.dateOfRegistration | date}}</td>
+                    <td>{{entry.familySerialNumber}}</td>
+                    <td>{{entry.name}}</td>
+                    <td>{{entry.address}}</td>
+                    <td>{{entry.age}}</td>
+
+                    <td >
+                        <span class="btn btn-group btn-group-sm">
+                            <a ui-sref="formPncViewEntry({formId: $ctrl.item.tcL_PNCId, entryId: entry.tcL_PNC_EntryId})" class="btn btn-outline-warning">
+                                <span class="fas fa-search"></span>&nbsp;View
+                            </a>
+                            <a ui-sref="formPncEditEntry({formId: $ctrl.item.tcL_PNCId, entryId: entry.tcL_PNC_EntryId})" class="btn btn-outline-warning">
+                                <span class="fas fa-edit"></span>&nbsp;Edit
+                            </a>
+                            <button ng-click="$ctrl.deleteEntry(entry.tcL_PNC_EntryId)" class="btn btn-outline-danger">
+                                <span class="fas fa-trash"></span>&nbsp;Remove
+                            </button>
+                        </span>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

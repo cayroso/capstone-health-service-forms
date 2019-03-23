@@ -34,34 +34,55 @@ function controller($http, $state, toastr) {
                         //debugger;
                         vm.entry.dateOfRegistration = new Date(vm.entry.dateOfRegistration);
                         vm.entry.dateOfBirth = new Date(vm.entry.dateOfBirth);
-                        vm.entry.dateNewbornScreeningReferral = new Date(vm.entry.dateNewbornScreeningReferral);
-                        vm.entry.dateNewbornScreeningDone = new Date(vm.entry.dateNewbornScreeningDone);
-                        vm.entry.cpabttAssessed = new Date(vm.entry.cpabttAssessed);
-                        vm.entry.childExclusiveBreastFeed6 = new Date(vm.entry.childExclusiveBreastFeed6);
-                        vm.entry.bcg = new Date(vm.entry.bcg);
 
-                        vm.entry.hepaB1Within24hrs = new Date(vm.entry.hepaB1Within24hrs);
-                        vm.entry.hepaB1MoreThan24hrs = new Date(vm.entry.hepaB1MoreThan24hrs);
-                        vm.entry.pentavalent1 = new Date(vm.entry.pentavalent1);
-                        vm.entry.pentavalent2 = new Date(vm.entry.pentavalent2);
-                        vm.entry.pentavalent3 = new Date(vm.entry.pentavalent3);
-                        vm.entry.opV1 = new Date(vm.entry.opV1);
-                        vm.entry.opV2 = new Date(vm.entry.opV2);
-                        vm.entry.opV3 = new Date(vm.entry.opV3);
+                        if (vm.entry.dateNewbornScreeningReferral !== null)
+                            vm.entry.dateNewbornScreeningReferral = new Date(vm.entry.dateNewbornScreeningReferral);
+                        if (vm.entry.dateNewbornScreeningDone !== null)
+                            vm.entry.dateNewbornScreeningDone = new Date(vm.entry.dateNewbornScreeningDone);
+                        if (vm.entry.cpabttAssessed !== null)
+                            vm.entry.cpabttAssessed = new Date(vm.entry.cpabttAssessed);
+                        if (vm.entry.childExclusiveBreastFeed6 !== null)
+                            vm.entry.childExclusiveBreastFeed6 = new Date(vm.entry.childExclusiveBreastFeed6);
+                        if (vm.entry.bcg !== null)
+                            vm.entry.bcg = new Date(vm.entry.bcg);
+                        if (vm.entry.hepaB1Within24hrs !== null)
+                            vm.entry.hepaB1Within24hrs = new Date(vm.entry.hepaB1Within24hrs);
+                        if (vm.entry.hepaB1MoreThan24hrs !== null)
+                            vm.entry.hepaB1MoreThan24hrs = new Date(vm.entry.hepaB1MoreThan24hrs);
+                        if (vm.entry.pentavalent1 !== null)
+                            vm.entry.pentavalent1 = new Date(vm.entry.pentavalent1);
+                        if (vm.entry.pentavalent2 !== null)
+                            vm.entry.pentavalent2 = new Date(vm.entry.pentavalent2);
+                        if (vm.entry.pentavalent3 !== null)
+                            vm.entry.pentavalent3 = new Date(vm.entry.pentavalent3);
+                        if (vm.entry.opV1 !== null)
+                            vm.entry.opV1 = new Date(vm.entry.opV1);
+                        if (vm.entry.opV2 !== null)
+                            vm.entry.opV2 = new Date(vm.entry.opV2);
+                        if (vm.entry.opV3 !== null)
+                            vm.entry.opV3 = new Date(vm.entry.opV3);
+                        if (vm.entry.ipv !== null)
 
-                        vm.entry.ipv = new Date(vm.entry.ipv);
-                        vm.entry.mcV1 = new Date(vm.entry.mcV1);
-                        vm.entry.mcV2 = new Date(vm.entry.mcV2);
+                            vm.entry.ipv = new Date(vm.entry.ipv);
+                        if (vm.entry.mcV1 !== null)
+                            vm.entry.mcV1 = new Date(vm.entry.mcV1);
+                        if (vm.entry.mcV2 !== null)
+                            vm.entry.mcV2 = new Date(vm.entry.mcV2);
+                        if (vm.entry.dateFullyImmunizedChild !== null)
 
-                        vm.entry.dateFullyImmunizedChild = new Date(vm.entry.dateFullyImmunizedChild);
-                        vm.entry.rotaVirusVaccine1 = new Date(vm.entry.rotaVirusVaccine1);
-                        vm.entry.rotaVirusVaccine2 = new Date(vm.entry.rotaVirusVaccine2);
-
-                        vm.entry.pcV1 = new Date(vm.entry.pcV1);
-                        vm.entry.pcV2 = new Date(vm.entry.pcV2);
-                        vm.entry.pcV3 = new Date(vm.entry.pcV3);
-                        
-                        vm.entry.deworming = new Date(vm.entry.deworming);
+                            vm.entry.dateFullyImmunizedChild = new Date(vm.entry.dateFullyImmunizedChild);
+                        if (vm.entry.rotaVirusVaccine1 !== null)
+                            vm.entry.rotaVirusVaccine1 = new Date(vm.entry.rotaVirusVaccine1);
+                        if (vm.entry.rotaVirusVaccine2 !== null)
+                            vm.entry.rotaVirusVaccine2 = new Date(vm.entry.rotaVirusVaccine2);
+                        if (vm.entry.pcV1 !== null)
+                            vm.entry.pcV1 = new Date(vm.entry.pcV1);
+                        if (vm.entry.pcV2 !== null)
+                            vm.entry.pcV2 = new Date(vm.entry.pcV2);
+                        if (vm.entry.pcV3 !== null)
+                            vm.entry.pcV3 = new Date(vm.entry.pcV3);
+                        if (vm.entry.deworming !== null)
+                            vm.entry.deworming = new Date(vm.entry.deworming);
 
                         return;
                     }

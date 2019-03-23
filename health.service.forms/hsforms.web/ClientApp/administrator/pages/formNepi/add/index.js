@@ -6,7 +6,8 @@ function controller($http, $state, toastr) {
     vm.id = $state.params.formId;
 
 
-    vm.save = function (id) {
+    vm.save = function () {
+        debugger;
         $http.post(`api/nepi/add`, vm.item)
             .then(function (resp) {
                 toastr.success('Form Added');

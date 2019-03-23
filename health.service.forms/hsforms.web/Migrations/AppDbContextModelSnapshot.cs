@@ -33,6 +33,8 @@ namespace hsforms.web.Migrations
 
                     b.Property<string>("Barangay");
 
+                    b.Property<DateTime>("LastUploaded");
+
                     b.Property<string>("Municipality");
 
                     b.Property<string>("Province");
@@ -90,7 +92,7 @@ namespace hsforms.web.Migrations
 
                     b.Property<DateTime?>("DateNextService12");
 
-                    b.Property<DateTime?>("DateNextService2S");
+                    b.Property<DateTime?>("DateNextService2");
 
                     b.Property<DateTime?>("DateNextService3");
 
@@ -120,7 +122,7 @@ namespace hsforms.web.Migrations
 
                     b.Property<string>("PreviousMethod");
 
-                    b.Property<string>("Remakrs");
+                    b.Property<string>("Remarks");
 
                     b.Property<string>("TCL_FPId")
                         .IsRequired();
@@ -279,6 +281,8 @@ namespace hsforms.web.Migrations
 
                     b.Property<string>("Barangay");
 
+                    b.Property<DateTime>("LastUploaded");
+
                     b.Property<string>("Municipality");
 
                     b.Property<string>("Province");
@@ -308,7 +312,7 @@ namespace hsforms.web.Migrations
 
                     b.Property<decimal>("BirthWeight");
 
-                    b.Property<DateTime?>("DateOfRegistraiton");
+                    b.Property<DateTime?>("DateOfRegistration");
 
                     b.Property<DateTime?>("DateSTIPenicillin");
 

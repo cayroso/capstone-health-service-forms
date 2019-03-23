@@ -1,3 +1,46 @@
 ﻿<div>
-    Dashboard
+    <h4>Dashboard</h4>
+
+    <hr />
+
+    <div class="row">
+        <div class="col-md-10">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Form</th>
+                            <th>Count</th>
+                            <th>Total Entries</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-right">
+                                <a ui-sref="formFp">Family Planning</a>
+                            </td>
+                            <td>{{$ctrl.data.fpCount}}</td>
+                            <td>{{$ctrl.data.fpEntryCount}}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">
+                                <a ui-sref="formNepi">Nutrition and EPI</a>
+                            </td>
+                            <td>{{$ctrl.data.nepiCount}}</td>
+                            <td>{{$ctrl.data.nepiEntryCount}}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">
+                                <a ui-sref="formPnc">Prenatal Care</a>
+                            </td>
+                            <td>{{$ctrl.data.pncCount}}</td>
+                            <td>{{$ctrl.data.pncEntryCount}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
 </div>

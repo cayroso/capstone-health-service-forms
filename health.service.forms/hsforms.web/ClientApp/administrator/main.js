@@ -15,7 +15,7 @@ import './pages/forms';
 
 import './pages/formNepi';
 import './pages/formNepi/add';
-//import './pages/formNepi/edit';
+import './pages/formNepi/edit';
 import './pages/formNepi/view';
 
 import './pages/formNepi/addEntry';
@@ -23,7 +23,23 @@ import './pages/formNepi/editEntry';
 import './pages/formNepi/viewEntry';
 
 
-import './pages/formPf';
+import './pages/formFp';
+import './pages/formFp/add';
+import './pages/formFp/edit';
+import './pages/formFp/view';
+
+import './pages/formFp/addEntry';
+import './pages/formFp/editEntry';
+import './pages/formFp/viewEntry';
+
+
 import './pages/formPnc';
+import './pages/formPnc/add';
+import './pages/formPnc/edit';
+import './pages/formPnc/view';
+
+import './pages/formPnc/addEntry';
+import './pages/formPnc/editEntry';
+import './pages/formPnc/viewEntry';
 
 import './pages/users';

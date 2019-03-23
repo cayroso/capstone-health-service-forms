@@ -281,7 +281,7 @@ namespace hsforms.web.Data
                         Age = n,
                         AttendedBy = "AttendedBy",
                         BirthWeight = n,
-                        DateOfRegistraiton = now,
+                        DateOfRegistration = now,
                         DateSTIPenicillin = now,
                         DateSTIResult = now,
                         DateSTITested = now,
@@ -351,7 +351,7 @@ namespace hsforms.web.Data
                         DateNextService10 = now,
                         DateNextService11 = now,
                         DateNextService12 = now,
-                        DateNextService2S = now,
+                        DateNextService2 = now,
                         DateNextService3 = now,
                         DateNextService4 = now,
                         DateNextService5 = now,
@@ -367,7 +367,7 @@ namespace hsforms.web.Data
                         PresentMethod = $"Present Method=0",
                         PreviousMethod = $"Previous Method=0",
                         TypeOfClient = $"TypeOfClient",
-                        Remakrs = $"Remarks {n}",
+                        Remarks = $"Remarks {n}",
 
 
                     };
