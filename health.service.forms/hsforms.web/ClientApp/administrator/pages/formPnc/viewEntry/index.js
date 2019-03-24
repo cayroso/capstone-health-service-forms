@@ -1,10 +1,19 @@
 ﻿import 'jquery';
 import app from '../../../app';
 
-function controller($http, $state, toastr) {
+function controller($rootScope, $http, $state, toastr) {
     const vm = this;
     vm.formId = $state.params.formId;
     vm.entryId = $state.params.entryId;
+
+    vm.hasPermission = function (frm) {
+        //debugger;
+        if ($rootScope.info.isAdmin)
+            return true;
+        if ($rootScope.info.user.userId === frm.userId)
+            return true;
+        return false;
+    };
 
     vm.init = function () {
         $http.get(`api/administrator/forms/pncs/${vm.formId}`)
@@ -27,7 +36,7 @@ function controller($http, $state, toastr) {
     vm.init();
 }
 
-controller.$inject = ['$http', '$state', 'toastr'];
+controller.$inject = ['$rootScope', '$http', '$state', 'toastr'];
 
 app.component('formPncViewEntryComponent', {
     templateUrl: 'app/clientapp/administrator/pages/formPnc/viewEntry/index.html',

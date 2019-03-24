@@ -1,7 +1,12 @@
 ﻿<div>
-    <button class="btn btn-primary mb-3">
-        Add New User
-    </button>
+    <h4>
+        <span class="fas fa-fw fa-users"></span>&nbsp;Application Users&nbsp;<button ng-click="$ctrl.dlgAddUser()" class="btn btn-outline-primary">
+            <span class="fas fa-fw fa-user-plus"></span>&nbsp;New User
+        </button>
+    </h4>
+
+    <hr />
+
     <div class="table-responsive">
         <table class="table table-bordered table-hover">
             <thead>
@@ -19,6 +24,11 @@
             </thead>
             <tbody>
                 <tr ng-repeat="item in $ctrl.items" ng-click="$ctrl.setSelectedItem(item)">
+                    <td ng-if="$ctrl.selectedItem">
+                        <button ng-if="$ctrl.selectedItem===item" ng-click="$ctrl.dlgEditUser()" class="btn btn-sm btn-warning">
+                            <span class="fas fa-fw fa-user-edit"></span>
+                        </button>
+                    </td>
                     <td>{{item.userName}}</td>
                     <td>{{item.firstName}}</td>
                     <td>{{item.middleName}}</td>
@@ -28,9 +38,7 @@
                     <td>{{item.mobile}}</td>
                     <td>{{item.userRoles[0].role.name}}</td>
 
-                    <td ng-if="$ctrl.selectedItem">
-                        <button ng-if="$ctrl.selectedItem===item" ng-click="$ctrl.dlgEditUser()" class="btn btn-primary">Edit</button>
-                    </td>
+
                 </tr>
             </tbody>
         </table>

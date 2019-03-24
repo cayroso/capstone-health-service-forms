@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace hsforms.web.Pages.Administrator
 {
-    [Authorize(Roles = AppRoles.Administrator)]
+    [Authorize]
     public class IndexModel : PageModel
     {
         public void OnGet()

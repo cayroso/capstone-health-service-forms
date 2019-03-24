@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore;
 namespace hsforms.web.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize(Roles = AppRoles.Administrator)]
+    //[Authorize(Roles = AppRoles.Administrator)]
     public class AdministratorController : Controller
     {
         private readonly AppDbContext _appDbContext;
@@ -89,6 +89,7 @@ namespace hsforms.web.Controllers
         {
             var data = await _appDbContext
                 .Users
+                .Include(p=>p.UserRoles)
                 .FirstOrDefaultAsync(p => p.UserId == info.UserId);
 
             if (data == null)
@@ -103,6 +104,12 @@ namespace hsforms.web.Controllers
             data.Email = info.Email;
             data.Phone = info.Phone;
             data.Mobile = info.Mobile;
+
+            //  remove all roles
+            _appDbContext.UserRoles.RemoveRange(data.UserRoles);
+
+            //  add new
+            await _appDbContext.AddAsync(new UserRole { UserId = info.UserId, RoleId = info.RoleId });
 
             await _appDbContext.SaveChangesAsync();
 
@@ -306,6 +313,8 @@ namespace hsforms.web.Controllers
         public string Email { get; set; }
         public string Phone { get; set; }
         public string Mobile { get; set; }
+
+        public string RoleId { get; set; }
 
     }
 

@@ -3,7 +3,7 @@
     <a ui-sref="formNepiView({formId: $ctrl.item.tcL_NEPIId})" class="btn btn-outline-secondary">
         <span class="fas fa-backward"></span>&nbsp;Back
     </a>
-    <a ui-sref="formNepiEditEntry({formId: $ctrl.item.tcL_NEPIId, entryId: $ctrl.entry.tcL_NEPI_EntryId})" class="btn btn-outline-warning">
+    <a ng-if="$ctrl.hasPermission($ctrl.item)" ui-sref="formNepiEditEntry({formId: $ctrl.item.tcL_NEPIId, entryId: $ctrl.entry.tcL_NEPI_EntryId})" class="btn btn-outline-warning">
         <span class="fas fa-edit"></span>&nbsp;Edit
     </a>
     

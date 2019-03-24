@@ -36,7 +36,9 @@ app.controller('mainController', function ($rootScope, $window) {
     vm.resetSettings = function () {
         $window.localStorage.removeItem('baseApiUrl');
         $window.localStorage.removeItem('user');
-        $window.localStorage.removeItem('form1');
+        $window.localStorage.removeItem('fp');
+        $window.localStorage.removeItem('nepi');
+        $window.localStorage.removeItem('pnc');
 
         vm.setPage('pages/server/index.html');
     };

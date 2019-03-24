@@ -1,0 +1,84 @@
+﻿<div ng-controller="formPncViewController as $ctrl">
+
+    <h4><span class="fas fa-file-excel"></span>&nbsp;View Prenatal Care Form</h4><sub>Last Uploaded: {{$ctrl.item.lastUploaded | date:'medium'}}</sub>
+
+    <div class="btn-group">
+        <button ng-click="$ctrl.back()" class="btn btn-outline-secondary">
+            <span class="fas fa-backward"></span>&nbsp;Back
+        </button>
+        <button ng-click="$ctrl.edit()" class="btn btn-outline-warning">
+            <span class="fas fa-edit"></span>&nbsp;Edit
+        </button>
+        <button ng-click="$ctrl.addEntry()" class="btn btn-outline-warning">
+            <span class="fas fa-plus"></span>&nbsp;Add Entry
+        </button>
+        <button ng-click="$ctrl.pull()" class="btn btn-outline-danger">
+            <span class="fas fa-download"></span>&nbsp;Pull
+        </button>
+        <button ng-click="$ctrl.push()" class="btn btn-outline-danger">
+            <span class="fas fa-upload"></span>&nbsp;Push
+        </button>
+
+    </div>
+
+    <hr />
+
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <b>BARANGAY</b>
+            <span class="form-control" readonly>{{$ctrl.item.barangay}}</span>
+        </div>
+        <div class="form-group col-md-3">
+            <b>MUNICIPALITY</b>
+            <span class="form-control" readonly>{{$ctrl.item.municipality}}</span>
+        </div>
+        <div class="form-group col-md-3">
+            <b>PROVINCE</b>
+            <span class="form-control" readonly>{{$ctrl.item.province}}</span>
+        </div>
+        <div class="form-group col-md-3">
+            <b>REGION</b>
+            <span class="form-control" readonly>{{$ctrl.item.region}}</span>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Date of Registration</th>
+                    <th>Family Serial Number</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Age</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="entry in $ctrl.item.entries">
+                    <td>{{entry.dateOfRegistration | date}}</td>
+                    <td>{{entry.familySerialNumber}}</td>
+                    <td>{{entry.name}}</td>
+                    <td>{{entry.address}}</td>
+                    <td>{{entry.age}}</td>
+
+                    <td>
+                        <span class="btn btn-group btn-group-sm">
+                            <button ng-click="$ctrl.viewEntry(entry)" class="btn btn-outline-warning">
+                                <span class="fas fa-search"></span>&nbsp;View
+                            </button>
+                            <button ng-click="$ctrl.editEntry(entry)" class="btn btn-outline-warning">
+                                <span class="fas fa-edit"></span>&nbsp;Edit
+                            </button>
+                            <button ng-click="$ctrl.deleteEntry(entry.tcL_PNC_EntryId)" class="btn btn-outline-danger">
+                                <span class="fas fa-trash"></span>&nbsp;Remove
+                            </button>
+                        </span>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

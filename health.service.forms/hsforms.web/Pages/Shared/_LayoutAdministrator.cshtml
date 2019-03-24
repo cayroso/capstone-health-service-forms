@@ -1,4 +1,6 @@
-﻿@{
+﻿@using hsforms.web.Data;
+
+@{
     var app = "Health Service Forms";
 }
 <!DOCTYPE html>
@@ -51,12 +53,25 @@
                     <span>Prenatal Care</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a ui-sref="users" class="nav-link" href="#">
-                    <i class="fas fa-fw fa-users"></i>
-                    <span>Users</span>
-                </a>
-            </li>
+            @if (User.IsInRole(AppRoles.Administrator))
+            {
+                <li class="nav-item">
+                    <a ui-sref="users" class="nav-link" href="#">
+                        <i class="fas fa-fw fa-users"></i>
+                        <span>Users</span>
+                    </a>
+                </li>
+            }
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                <li class="nav-item">
+                    <a href="~/Account/Logout" class="nav-link">
+                        <i class="fas fa-fw fa-sign-out-alt"></i>
+                        <span>Logout (@User.Identity.Name)</span>
+                    </a>
+                </li>
+            }
         </ul>
         <div id="content-wrapper">
             <div class="container-fluid">
@@ -77,8 +92,8 @@
     <!-- /#wrapper -->
     <!-- Scroll to Top Button-->
     @*<a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>*@
+            <i class="fas fa-angle-up"></i>
+        </a>*@
 
     <script src="~/app/vendor-bundle.js" asp-append-version="true"></script>
     <script src="~/app/administrator.js" asp-append-version="true"></script>

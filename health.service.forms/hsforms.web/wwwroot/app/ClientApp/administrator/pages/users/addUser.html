@@ -3,8 +3,73 @@
         <h3 class="modal-title">Add User</h3>
     </div>
     <div class="modal-body">
-        <!--Amount Paid: <input ng-model="payment.amountPaid" />
-        Reference Number: <input ng-model="payment.referenceNumber" />-->
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Username</label>
+            <div class="col-sm-9">
+                <input type="text" ng-model="item.userName" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Password</label>
+            <div class="col-sm-9">
+                <input type="password" ng-model="item.password" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Confirm Password</label>
+            <div class="col-sm-9">
+                <input type="password" ng-model="item.confirmPassword" class="form-control" />
+            </div>
+        </div>
+        <hr />
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">First Name</label>
+            <div class="col-sm-9">
+                <input type="text" ng-model="item.firstName" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Middle Name</label>
+            <div class="col-sm-9">
+                <input type="text" ng-model="item.middleName" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Last Name</label>
+            <div class="col-sm-9">
+                <input type="text" ng-model="item.lastName" class="form-control" />
+            </div>
+        </div>
+        <hr />
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Email</label>
+            <div class="col-sm-9">
+                <input type="text" ng-model="item.email" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Phone</label>
+            <div class="col-sm-9">
+                <input type="text" ng-model="item.phone" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Mobile</label>
+            <div class="col-sm-9">
+                <input type="text" ng-model="item.mobile" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Role</label>
+            <div class="col-sm-9">
+                <select name="userRole" ng-model="item.roleId" class="form-control">
+                    <option value="administrator">Administrator</option>
+                    <option value="midwife">MidWife</option>
+                    <option value="healthworker">Health Worker</option>
+                </select>
+            </div>
+        </div>
+        
     </div>
     <div class="modal-footer">
         <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>

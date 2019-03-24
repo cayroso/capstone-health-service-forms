@@ -5,6 +5,7 @@ using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 using Android.Views;
+using Android.Webkit;
 using Android.Widget;
 
 namespace hsforms.android
@@ -12,42 +13,66 @@ namespace hsforms.android
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
+        private WebView webView;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.activity_main);
+            SetContentView(Resource.Layout.content_main);
 
-            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
-            SetSupportActionBar(toolbar);
+            webView = FindViewById<WebView>(Resource.Id.LocalWebView);
+            webView.Settings.LoadWithOverviewMode = true;
 
-            FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
-            fab.Click += FabOnClick;
+
+            webView.Settings.JavaScriptEnabled = true;
+            webView.Settings.DomStorageEnabled = true;
+            webView.Settings.UseWideViewPort = true;
+            webView.Settings.AllowContentAccess = true;
+            webView.Settings.AllowFileAccess = true;
+            webView.Settings.AllowFileAccessFromFileURLs = true;
+            webView.Settings.AllowUniversalAccessFromFileURLs = true;
+
+
+            var clientHybrid = new HybridWebViewClient();
+            //webView.SetWebViewClient(clientHybrid);
+
+            webView.LoadUrl("file:///android_asset/index.html");
+            //const string html = @"<html><head><script type='text/javascript'>window.location.replace('file:///android_asset/index.html')</script></head><body></body></html>";
+            //webView.LoadDataWithBaseURL("file:///android_asset/", html, "text/html", "UTF-8", null);
         }
 
-        public override bool OnCreateOptionsMenu(IMenu menu)
+        protected override void OnDestroy()
         {
-            MenuInflater.Inflate(Resource.Menu.menu_main, menu);
-            return true;
+            webView.Destroy();
+            base.OnDestroy();
         }
 
-        public override bool OnOptionsItemSelected(IMenuItem item)
+        private class HybridWebViewClient : WebViewClient
         {
-            int id = item.ItemId;
-            if (id == Resource.Id.action_settings)
+            public override WebResourceResponse ShouldInterceptRequest(WebView view, IWebResourceRequest request)
             {
-                return true;
+                //var url = request.Url.ToString();
+
+                //var http = new HttpClient();
+
+                //return new WebResourceResponse()
+                return base.ShouldInterceptRequest(view, request);
             }
 
-            return base.OnOptionsItemSelected(item);
-        }
+            //public override bool ShouldOverrideUrlLoading(WebView view, string url)
+            //{
+            //    return false;
+            //    //const string scheme = "hybrid:";
 
-        private void FabOnClick(object sender, EventArgs eventArgs)
-        {
-            View view = (View) sender;
-            Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
-                .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
+            //    //if (!url.StartsWith(scheme))
+            //    //    return false;
+
+            //    //return true;
+            //}
+
         }
-	}
+    }
+
+    
 }
 

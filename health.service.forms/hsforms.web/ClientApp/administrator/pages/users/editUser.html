@@ -25,7 +25,7 @@
         <div class="form-group row">
             <label class="col-sm-3 col-form-label">Email</label>
             <div class="col-sm-9">
-                <input type="email" ng-model="item.email" class="form-control" />
+                <input type="text" ng-model="item.email" class="form-control" />
             </div>
         </div>
         <div class="form-group row">
@@ -38,6 +38,16 @@
             <label class="col-sm-3 col-form-label">Mobile</label>
             <div class="col-sm-9">
                 <input type="text" ng-model="item.mobile" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Role</label>
+            <div class="col-sm-9">
+                <select name="userRole" ng-model="item.roleId" class="form-control">
+                    <option value="administrator">Administrator</option>
+                    <option value="midwife">MidWife</option>
+                    <option value="healthworker">Health Worker</option>
+                </select>
             </div>
         </div>
     </div>

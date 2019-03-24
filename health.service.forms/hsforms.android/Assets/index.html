@@ -14,19 +14,20 @@
 <body class="container-fluid m-1" ng-controller="mainController as $main">
     <div class="row">
         <div ng-if="isAuthenticated && $main.selectedPage ===''" class="col-sm-12 col-md-4">
+
             <div class="card p-2 text-center mb-2 bg-secondary text-white">
-                <a ng-click="$main.setPage('pages/form1/index.html')">
-                    <span class="fas fa-file-excel"></span>&nbsp;Target Client List for Nutrition and EPI Program
+                <a ng-click="$main.setPage('pages/fp/index.html')">
+                    <span class="fas fa-file-excel"></span>&nbsp;Family Planning
                 </a>
             </div>
             <div class="card p-2 text-center mb-2 bg-secondary text-white">
-                <a ng-click="$main.setPage('pages/form2/index.html')">
-                    <span class="fas fa-file-excel"></span>&nbsp;Target Client List for Family Planning
+                <a ng-click="$main.setPage('pages/nepi/index.html')">
+                    <span class="fas fa-file-excel"></span>&nbsp;Nutrition and EPI Program
                 </a>
             </div>
             <div class="card p-2 text-center mb-2 bg-secondary text-white">
-                <a ng-click="$main.setPage('pages/form3/index.html')">
-                    <span class="fas fa-file-excel"></span>&nbsp;Target Client List for Prenatal Care
+                <a ng-click="$main.setPage('pages/pnc/index.html')">
+                    <span class="fas fa-file-excel"></span>&nbsp;Prenatal Care
                 </a>
             </div>
             <div class="card p-1 text-center mb-2 bg-secondary text-white">
@@ -36,22 +37,11 @@
             </div>
         </div>
     </div>
-    <!--<ul class="nav nav-tabs pt-1" ng-if="isAuthenticated && $main.selectedPage ===''">
-        <li role="presentation" class="nav-item">
-            <a ng-click="$main.setPage('pages/form1/index.html')"
-               ng-class="{'active': $main.selectedPage === 'pages/form1/index.html'}" class="nav-link">Form1</a>
-        </li>
-        <li role="presentation" class="nav-item">
-            <a ng-click="$main.setPage('pages/form2/index.html')"
-               ng-class="{'active': $main.selectedPage === 'pages/form2/index.html'}" class="nav-link">Form2</a>
-        </li>
-        <li role="presentation" class="nav-item">
-            <a ng-click="$main.setPage('pages/form2/index.html')"
-               ng-class="{'active': $main.selectedPage === 'pages/form3/index.html'}" class="nav-link">Form3</a>
-        </li>
-    </ul>-->
+
     <div class="pt-1" ng-include="$main.selectedPage">
-        Loading, please wait...
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading, please wait.</span>
+        </div>
     </div>
 
     <script type="text/javascript" src="scripts/jquery/jquery.js"></script>
@@ -63,20 +53,36 @@
 
     <script type="text/javascript" src="index.js"></script>
 
-    <script type="text/javascript" src="pages/form1/index.js"></script>
-    <script type="text/javascript" src="pages/form1/view/index.js"></script>
-    <script type="text/javascript" src="pages/form1/edit/index.js"></script>
-
-    <script type="text/javascript" src="pages/form1/addEntry/index.js"></script>
-    <script type="text/javascript" src="pages/form1/editEntry/index.js"></script>
-    <script type="text/javascript" src="pages/form1/viewEntry/index.js"></script>
-
-
-    <script type="text/javascript" src="pages/form2/index.js"></script>
-    <script type="text/javascript" src="pages/form3/index.js"></script>
-
     <script type="text/javascript" src="pages/login/index.js"></script>
     <script type="text/javascript" src="pages/server/index.js"></script>
+
+    <!--family planning-->
+    <script type="text/javascript" src="pages/fp/index.js"></script>
+    <script type="text/javascript" src="pages/fp/view/index.js"></script>
+    <script type="text/javascript" src="pages/fp/edit/index.js"></script>
+
+    <script type="text/javascript" src="pages/fp/addEntry/index.js"></script>
+    <script type="text/javascript" src="pages/fp/editEntry/index.js"></script>
+    <script type="text/javascript" src="pages/fp/viewEntry/index.js"></script>
+
+    <!--Nutrition and EPI-->
+    <script type="text/javascript" src="pages/nepi/index.js"></script>
+    <script type="text/javascript" src="pages/nepi/view/index.js"></script>
+    <script type="text/javascript" src="pages/nepi/edit/index.js"></script>
+
+    <script type="text/javascript" src="pages/nepi/addEntry/index.js"></script>
+    <script type="text/javascript" src="pages/nepi/editEntry/index.js"></script>
+    <script type="text/javascript" src="pages/nepi/viewEntry/index.js"></script>
+
+    <!--Prenatal Care-->
+    <script type="text/javascript" src="pages/pnc/index.js"></script>
+    <script type="text/javascript" src="pages/pnc/view/index.js"></script>
+    <script type="text/javascript" src="pages/pnc/edit/index.js"></script>
+
+    <script type="text/javascript" src="pages/pnc/addEntry/index.js"></script>
+    <script type="text/javascript" src="pages/pnc/editEntry/index.js"></script>
+    <script type="text/javascript" src="pages/pnc/viewEntry/index.js"></script>
+
 
 
 </body>

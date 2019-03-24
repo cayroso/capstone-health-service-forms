@@ -132,7 +132,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/dashboard');
 });
 
-app.controller('mainController', function ($http) {
+app.controller('mainController', function ($rootScope, $http, toastr) {
     const vm = this;
     const pagePrefix = 'app/clientapp/administrator/templates/';
     vm.page = `${pagePrefix}/users.html`;
@@ -145,20 +145,28 @@ app.controller('mainController', function ($http) {
         event.preventDefault();
     };
 
-    //var payload = {
-    //    items: [
-    //        {
-    //            barangay: 'gg'
-    //        }]
-    //};
+    $rootScope.hasPermission = function (userId) {
+        //debugger;
+        var info = $rootScope.info;
 
-    //$http.post('https://localhost:44348/hsforms/api/nepi/upload', payload)
-    //    .then(function (resp) {
-    //        alert('oye1');
-    //    }, function (err) {
-    //        alert('oye2');
-    //    });
-    
+        if (info.isAdmin)
+            return true;
+        if (info.user.userId === userId)
+            return true;
+        return false;
+    };
+
+    vm.getUserInfo = function () {
+        $http.get('api/account/info')
+            .then(function (resp) {
+                $rootScope.info = resp.data;
+                
+            }, function (err) {
+                toastr.error('User not found, please re-login');
+            });
+    };
+
+    vm.getUserInfo();
 
 });
 

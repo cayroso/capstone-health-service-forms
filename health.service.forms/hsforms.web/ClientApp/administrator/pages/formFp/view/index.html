@@ -5,11 +5,14 @@
         <a ui-sref="formFp" class="btn btn-outline-secondary">
             <span class="fas fa-backward"></span>&nbsp;Back
         </a>
-        <a ui-sref="formFpAddEntry({formId: $ctrl.item.tcL_FPId})" class="btn btn-outline-warning">
+        <a ng-if="$ctrl.hasPermission($ctrl.item)" ui-sref="formFpAddEntry({formId: $ctrl.item.tcL_FPId})" class="btn btn-outline-warning">
             <span class="fas fa-plus"></span>&nbsp;Add Entry
         </a>
-        <a ui-sref="formFpEdit({formId: $ctrl.item.tcL_FPId})" class="btn btn-outline-warning">
+        <a ng-if="$ctrl.hasPermission($ctrl.item)" ui-sref="formFpEdit({formId: $ctrl.item.tcL_FPId})" class="btn btn-outline-warning">
             <span class="fas fa-edit"></span>&nbsp;Edit
+        </a>
+        <a ng-href="api/fp/forms/{{$ctrl.item.tcL_FPId}}/export" class="btn btn-outline-info">
+            <span class="fas fa-file-excel"></span>&nbsp;Print
         </a>
     </div>
 
@@ -59,10 +62,10 @@
                             <a ui-sref="formFpViewEntry({formId: $ctrl.item.tcL_FPId, entryId: entry.tcL_FP_EntryId})" class="btn btn-outline-warning">
                                 <span class="fas fa-search"></span>&nbsp;View
                             </a>
-                            <a ui-sref="formFpEditEntry({formId: $ctrl.item.tcL_FPId, entryId: entry.tcL_FP_EntryId})" class="btn btn-outline-warning">
+                            <a ng-if="$ctrl.hasPermission($ctrl.item)" ui-sref="formFpEditEntry({formId: $ctrl.item.tcL_FPId, entryId: entry.tcL_FP_EntryId})" class="btn btn-outline-warning">
                                 <span class="fas fa-edit"></span>&nbsp;Edit
                             </a>
-                            <button ng-click="$ctrl.deleteEntry(entry.tcL_FP_EntryId)" class="btn btn-outline-danger">
+                            <button ng-if="$ctrl.hasPermission($ctrl.item)" ng-click="$ctrl.deleteEntry(entry.tcL_FP_EntryId)" class="btn btn-outline-danger">
                                 <span class="fas fa-trash"></span>&nbsp;Remove
                             </button>
                         </span>

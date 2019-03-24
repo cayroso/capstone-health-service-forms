@@ -18,7 +18,7 @@
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
@@ -35,6 +35,9 @@
     <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
     <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <BundleAssemblies>false</BundleAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>PdbOnly</DebugType>
@@ -48,6 +51,9 @@
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <BundleAssemblies>false</BundleAssemblies>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -84,24 +90,17 @@
     <AndroidAsset Include="Assets\scripts\bootstrap\dist\js\bootstrap.js.map" />
     <AndroidAsset Include="Assets\scripts\bootstrap\dist\js\bootstrap.min.js.map" />
     <None Include="Resources\AboutResources.txt" />
-    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Properties\AndroidManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\activity_main.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
     <AndroidResource Include="Resources\layout\content_main.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\values\colors.xml" />
-    <AndroidResource Include="Resources\values\dimens.xml" />
-    <AndroidResource Include="Resources\values\ic_launcher_background.xml" />
     <AndroidResource Include="Resources\values\strings.xml" />
     <AndroidResource Include="Resources\values\styles.xml" />
-    <AndroidResource Include="Resources\menu\menu_main.xml" />
-    <AndroidResource Include="Resources\mipmap-anydpi-v26\ic_launcher.xml" />
-    <AndroidResource Include="Resources\mipmap-anydpi-v26\ic_launcher_round.xml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher_round.png" />
@@ -119,7 +118,7 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_round.png" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2.1" />
+    <PackageReference Include="Xamarin.Android.Support.Design" Version="22.2.0" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\fonts\fontawesome-free\css\fontawesome.css" />
@@ -4673,52 +4672,52 @@
     <AndroidAsset Include="Assets\fonts\fontawesome-free\webfonts\fa-solid-900.svg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\pages\form1\addEntry\index.html" />
+    <AndroidAsset Include="Assets\pages\nepi\addEntry\index.html" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\pages\form1\addEntry\index.js" />
+    <AndroidAsset Include="Assets\pages\nepi\addEntry\index.js" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\pages\form1\edit\index.html" />
+    <AndroidAsset Include="Assets\pages\nepi\edit\index.html" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\pages\form1\edit\index.js" />
+    <AndroidAsset Include="Assets\pages\nepi\edit\index.js" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\pages\form1\editEntry\index.html" />
+    <AndroidAsset Include="Assets\pages\nepi\editEntry\index.html" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\pages\form1\editEntry\index.js" />
+    <AndroidAsset Include="Assets\pages\nepi\editEntry\index.js" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\pages\form1\index.html" />
+    <AndroidAsset Include="Assets\pages\nepi\index.html" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\pages\form1\index.js" />
+    <AndroidAsset Include="Assets\pages\nepi\index.js" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\pages\form1\view\index.html" />
+    <AndroidAsset Include="Assets\pages\nepi\view\index.html" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\pages\form1\view\index.js" />
+    <AndroidAsset Include="Assets\pages\nepi\view\index.js" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\pages\form1\viewEntry\index.html" />
+    <AndroidAsset Include="Assets\pages\nepi\viewEntry\index.html" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\pages\form1\viewEntry\index.js" />
+    <AndroidAsset Include="Assets\pages\nepi\viewEntry\index.js" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\pages\form2\index.html" />
+    <AndroidAsset Include="Assets\pages\fp\index.html" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\pages\form2\index.js" />
+    <AndroidAsset Include="Assets\pages\fp\index.js" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\pages\form3\index.html" />
+    <AndroidAsset Include="Assets\pages\pnc\index.html" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\pages\form3\index.js" />
+    <AndroidAsset Include="Assets\pages\pnc\index.js" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\pages\login\index.html" />
@@ -4791,6 +4790,84 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\index.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\pages\fp\addEntry\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\pages\fp\addEntry\index.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\pages\fp\edit\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\pages\fp\edit\index.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\pages\fp\editEntry\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\pages\fp\editEntry\index.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\pages\fp\view\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\pages\fp\view\index.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\pages\fp\viewEntry\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\pages\fp\viewEntry\index.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\pages\pnc\addEntry\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\pages\pnc\addEntry\index.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\pages\pnc\edit\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\pages\pnc\edit\index.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\pages\pnc\editEntry\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\pages\pnc\editEntry\index.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\pages\pnc\view\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\pages\pnc\view\index.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\pages\pnc\viewEntry\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\pages\pnc\viewEntry\index.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\colors.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\dimens.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\ic_launcher_background.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

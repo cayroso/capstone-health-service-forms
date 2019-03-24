@@ -1,0 +1,337 @@
+﻿<div ng-controller="formNepiViewEntryComponent as $ctrl">
+    <h4>View Nutrition and EPI Program Entry</h4>
+    <button ng-click="$ctrl.back()" class="btn btn-outline-secondary">
+        <span class="fas fa-backward"></span>&nbsp;Back
+    </button>
+    <button ng-click="$ctrl.editEntry()" ui-sref="formNepiEditEntry({formId: $ctrl.item.tcL_NEPIId, entryId: $ctrl.entry.tcL_NEPI_EntryId})" class="btn btn-outline-warning">
+        <span class="fas fa-edit"></span>&nbsp;Edit
+    </button>
+    
+    <hr />
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <b>Date Of Registration</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dateOfRegistration|date:'MM/dd/yyyy'}}</span>
+
+        </div>
+        <div class="form-group col-md-6">
+            <b>Date Of Birth</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dateOfBirth|date:'MM/dd/yyyy'}}</span>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <b>Family Serial Number</b>
+            <input ng-model="$ctrl.entry.familySerialNumber" class="form-control" readonly />
+        </div>
+        <div class="form-group col-md-6">
+            <b>NHTS</b>
+            <input ng-model="$ctrl.entry.nhts" class="form-control" readonly />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <b>Name Of Child</b>
+
+        <input ng-model="$ctrl.entry.nameOfChild" class="form-control" readonly />
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <b>Weight</b>
+
+            <input ng-model="$ctrl.entry.weight" class="form-control" readonly />
+        </div>
+        <div class="form-group col-md-4">
+            <b>Height</b>
+
+            <input ng-model="$ctrl.entry.height" class="form-control" readonly />
+        </div>
+        <div class="form-group col-md-4">
+            <b>Gender</b>
+
+            <input ng-model="$ctrl.entry.gender" class="form-control" readonly />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <b>Name Of Mother</b>
+            <input ng-model="$ctrl.entry.nameOfMother" type="text" class="form-control" readonly />
+        </div>
+        <div class="form-group col-md-6">
+            <b>Address</b>
+            <input ng-model="$ctrl.entry.address" type="text" class="form-control" readonly />
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <b>Date Newborn Screening Referral</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dateNewbornScreeningReferral|date:'MM/dd/yyyy'}}</span>
+        </div>
+        <div class="form-group col-md-6">
+            <b>Date Newborn Screening Done</b>
+            <p class="form-control" readonly>{{$ctrl.entry.dateNewbornScreeningDone|date:'MM/dd/yyyy'}}</p>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <b>CPAB TT Status</b>
+            <input ng-model="$ctrl.entry.cpabttStatus" type="text" class="form-control" readonly />
+        </div>
+        <div class="form-group col-md-6">
+            <b>CPAB TT Assessed</b>
+            <span class="form-control" readonly>{{$ctrl.entry.cpabttAssessed|date:'MM/dd/yyyy'}}</span>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body p-2">
+            <h5 class="card-text">CHILD WAS EXCLUSIVELY BREASTFED</h5>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <div class="form-check">
+                        <input ng-model="$ctrl.entry.childExclusiveBreastFeed1" class="form-check-input" type="checkbox" id="childExclusiveBreastFeed1" disabled />
+                        <label class="form-check-label" for="childExclusiveBreastFeed1">1st MO</label>
+                    </div>
+                </div>
+                <div class="form-group col-md-2">
+                    <div class="form-check">
+                        <input ng-model="$ctrl.entry.childExclusiveBreastFeed2" class="form-check-input" type="checkbox" id="childExclusiveBreastFeed2" disabled />
+                        <label class="form-check-label" for="childExclusiveBreastFeed2">2nd MO</label>
+                    </div>
+                </div>
+                <div class="form-group col-md-2">
+                    <div class="form-check">
+                        <input ng-model="$ctrl.entry.childExclusiveBreastFeed3" class="form-check-input" type="checkbox" id="childExclusiveBreastFeed3" disabled />
+                        <label class="form-check-label" for="childExclusiveBreastFeed3">3rd MO</label>
+                    </div>
+                </div>
+                <div class="form-group col-md-2">
+                    <div class="form-check">
+                        <input ng-model="$ctrl.entry.childExclusiveBreastFeed4" class="form-check-input" type="checkbox" id="childExclusiveBreastFeed4" disabled />
+                        <label class="form-check-label" for="childExclusiveBreastFeed4">4th MO</label>
+                    </div>
+                </div>
+                <div class="form-group col-md-2">
+                    <div class="form-check">
+                        <input ng-model="$ctrl.entry.childExclusiveBreastFeed5" class="form-check-input" type="checkbox" id="childExclusiveBreastFeed5" disabled />
+                        <label class="form-check-label" for="childExclusiveBreastFeed5">5th MO</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group row col-md-8">
+                <label class="col-sm-4 text-right" for="childExclusiveBreastFeed6">6th MO</label>
+                <div class="col-sm-8">
+                    <span class="form-control" id="childExclusiveBreastFeed6" readonly>{{$ctrl.entry.childExclusiveBreastFeed6|date:'MM/dd/yyyy'}}</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card mt-2">
+        <div class="card-body p-2">
+            <h5 class="card-text">COMPLEMENTARY FEEDING</h5>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <div class="form-check">
+                        <input ng-model="$ctrl.entry.complimentaryFeeding6" class="form-check-input" type="checkbox" id="complimentaryFeeding6" disabled />
+                        <label class="form-check-label" for="complimentaryFeeding6">6th MO</label>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <div class="form-check">
+                        <input ng-model="$ctrl.entry.complimentaryFeeding7" class="form-check-input" type="checkbox" id="complimentaryFeeding7" disabled />
+                        <label class="form-check-label" for="complimentaryFeeding7">7th MO</label>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <div class="form-check">
+                        <input ng-model="$ctrl.entry.complimentaryFeeding8" class="form-check-input" type="checkbox" id="complimentaryFeeding8" disabled />
+                        <label class="form-check-label" for="complimentaryFeeding8">8th MO</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <b>BCG</b>
+            <span class="form-control" readonly>{{$ctrl.entry.bcg|date:'MM/dd/yyyy'}}</span>
+        </div>
+        <div class="col-md-8">
+            <div class="card mt-2">
+                <div class="card-body p-2">
+                    <h5 class="card-text">PENTAVALENT Hepa B1</h5>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Within 24hrs</label>
+                            <span class="form-control" readonly>{{$ctrl.entry.hepaB1Within24hrs|date:'MM/dd/yyyy'}}</span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>More Than 24hrs</label>
+                            <span class="form-control" readonly>{{$ctrl.entry.hepaB1MoreThan24hrs|date:'MM/dd/yyyy'}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mt-2">
+        <div class="card-body p-2">
+            <h5 class="card-text">OPV</h5>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label>1</label>
+                    <span class="form-control" readonly>{{$ctrl.entry.opV1|date:'MM/dd/yyyy'}}</span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label>2</label>
+                    <span class="form-control" readonly>{{$ctrl.entry.opV2|date:'MM/dd/yyyy'}}</span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label>3</label>
+                    <span class="form-control" readonly>{{$ctrl.entry.opV3|date:'MM/dd/yyyy'}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <b>IPV</b>
+            <span class="form-control" readonly>{{$ctrl.entry.ipv|date:'MM/dd/yyyy'}}</span>
+        </div>
+        <div class="form-group col-md-4">
+            <b>MCV1</b>
+            <span class="form-control" readonly>{{$ctrl.entry.mcV1|date:'MM/dd/yyyy'}}</span>
+        </div>
+        <div class="form-group col-md-4">
+            <b>MCV2</b>
+            <span class="form-control" readonly>{{$ctrl.entry.mcV2|date:'MM/dd/yyyy'}}</span>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <b>Date Fully Immunized Child</b>
+            <span class="form-control" readonly>{{$ctrl.entry.dateFullyImmunizedChild|date:'MM/dd/yyyy'}}</span>
+        </div>
+        <div class="form-group col-md-4">
+            <b>Rota Virus Vaccine 1</b>
+            <span class="form-control" readonly>{{$ctrl.entry.rotaVirusVaccine1|date:'MM/dd/yyyy'}}</span>
+        </div>
+        <div class="form-group col-md-4">
+            <b>Rota Virus Vaccine 2</b>
+            <span class="form-control" readonly>{{$ctrl.entry.rotaVirusVaccine2|date:'MM/dd/yyyy'}}</span>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <b>PCV1</b>
+            <span class="form-control" readonly>{{$ctrl.entry.pcV1|date:'MM/dd/yyyy'}}</span>
+        </div>
+        <div class="form-group col-md-4">
+            <b>PCV2</b>
+            <span class="form-control" readonly>{{$ctrl.entry.pcV2|date:'MM/dd/yyyy'}}</span>
+        </div>
+        <div class="form-group col-md-4">
+            <b>PCV3</b>
+            <span class="form-control" readonly>{{$ctrl.entry.pcV3|date:'MM/dd/yyyy'}}</span>
+        </div>
+    </div>
+
+
+    <div class="card mt-2">
+        <div class="card-body p-2">
+            <h5 class="card-text">VITAMIN A</h5>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <div class="form-check">
+                        <input ng-model="$ctrl.entry.vitaminA1" class="form-check-input" type="checkbox" id="vitaminA1" disabled />
+                        <label class="form-check-label" for="vitaminA1">6-11 mos</label>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <div class="form-check">
+                        <input ng-model="$ctrl.entry.vitaminA2" class="form-check-input" type="checkbox" id="vitaminA2" disabled />
+                        <label class="form-check-label" for="vitaminA2">Dose 1</label>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <div class="form-check">
+                        <input ng-model="$ctrl.entry.vitaminA3" class="form-check-input" type="checkbox" id="vitaminA3" disabled />
+                        <label class="form-check-label" for="vitaminA3">Dose 2</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mt-2">
+        <div class="card-body p-2">
+            <h5 class="card-text">IRON</h5>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <div class="form-check">
+                        <input ng-model="$ctrl.entry.ironA1" class="form-check-input" type="checkbox" id="ironA1" disabled />
+                        <label class="form-check-label" for="ironA1">6-11 mos</label>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <div class="form-check">
+                        <input ng-model="$ctrl.entry.ironA2" class="form-check-input" type="checkbox" id="ironA2" disabled />
+                        <label class="form-check-label" for="ironA2">12-59 mos</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mt-2">
+        <div class="card-body p-2">
+            <h5 class="card-text">MNP</h5>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <div class="form-check">
+                        <input ng-model="$ctrl.entry.mnP1" class="form-check-input" type="checkbox" id="mnP1" disabled />
+                        <label class="form-check-label" for="mnP1">6-11 mos</label>
+                    </div>
+                </div>
+                <div class="form-group col-md-3">
+                    <div class="form-check">
+                        <input ng-model="$ctrl.entry.mnP2" class="form-check-input" type="checkbox" id="mnP2" disabled />
+                        <label class="form-check-label" for="mnP2">12-23 mos</label>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+
+                    <label class="form-check-label" for="deworming">12-59 mos</label>
+                    <span class="form-control" id="deworming" readonly>{{$ctrl.entry.deworming|date:'MM/dd/yyyy'}}</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <b class="form-check-label" for="remarks">REMARKS</b>
+        <textarea ng-model="$ctrl.entry.remarks" class="form-control" rows="4" id="remarks"></textarea>
+    </div>
+
+
+</div>

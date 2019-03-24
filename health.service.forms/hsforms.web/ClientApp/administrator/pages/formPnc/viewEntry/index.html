@@ -3,11 +3,12 @@
     <a ui-sref="formPncView({formId: $ctrl.item.tcL_PNCId})" class="btn btn-outline-secondary">
         <span class="fas fa-backward"></span>&nbsp;Back
     </a>
-    <a ui-sref="formPncEditEntry({formId: $ctrl.item.tcL_PNCId, entryId: $ctrl.entry.tcL_PNC_EntryId})" class="btn btn-outline-warning">
+    <a ng-if="$ctrl.hasPermission($ctrl.item)" ui-sref="formPncEditEntry({formId: $ctrl.item.tcL_PNCId, entryId: $ctrl.entry.tcL_PNC_EntryId})" class="btn btn-outline-warning">
         <span class="fas fa-edit"></span>&nbsp;Edit
     </a>
 
     <hr />
+
     <div class="form-row">
         <div class="form-group col-md-6">
             <b>Date Of Registration</b>

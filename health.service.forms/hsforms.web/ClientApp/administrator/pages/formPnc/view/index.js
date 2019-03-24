@@ -1,10 +1,18 @@
 ﻿import 'jquery';
 import app from '../../../app';
 
-function controller($http, $state, toastr) {
+function controller($rootScope, $http, $state, toastr) {
     const vm = this;
     vm.id = $state.params.formId;
 
+    vm.hasPermission = function (frm) {
+        //debugger;
+        if ($rootScope.info.isAdmin)
+            return true;
+        if ($rootScope.info.user.userId === frm.userId)
+            return true;
+        return false;
+    };
 
     vm.deleteEntry = function (id) {
         $http.post(`api/pnc/entry/${id}/delete`)
@@ -26,7 +34,7 @@ function controller($http, $state, toastr) {
     vm.init();
 }
 
-controller.$inject = ['$http', '$state', 'toastr'];
+controller.$inject = ['$rootScope', '$http', '$state', 'toastr'];
 
 app.component('formPncViewComponent', {
     templateUrl: 'app/clientapp/administrator/pages/formPnc/view/index.html',

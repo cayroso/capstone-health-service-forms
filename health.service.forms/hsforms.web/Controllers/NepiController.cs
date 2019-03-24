@@ -1,4 +1,5 @@
 ﻿using hsforms.web.Data;
+using hsforms.web.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +20,18 @@ namespace hsforms.web.Controllers
         public NepiController(AppDbContext appDbContext)
         {
             _appDbContext = appDbContext;
+        }
+
+        [HttpGet("forms/{id}/export")]
+        public async Task<IActionResult> ExportForm(string id)
+        {
+            var svc = new ExportToExcelService(_appDbContext);
+
+            var stream = await svc.ConvertNepiToPdfAsync(id);
+
+            stream.Seek(0, System.IO.SeekOrigin.Begin);
+
+            return new FileStreamResult(stream, "application/xls") { FileDownloadName = $"Nutrition and EPI: {id}.xlsx" };
         }
 
         [HttpGet("forms/{id}")]
@@ -88,6 +101,18 @@ namespace hsforms.web.Controllers
             form.Region = info.Region;
 
             _appDbContext.Update(form);
+
+            await _appDbContext.SaveChangesAsync();
+
+            return Ok();
+        }
+
+        [HttpPost("remove")]
+        public async Task<IActionResult> RemoveForm(string id)
+        {
+            var data = await _appDbContext.TCL_NEPIs.Include(p => p.Entries).FirstOrDefaultAsync(p => p.TCL_NEPIId == id);
+
+            _appDbContext.Remove(data);
 
             await _appDbContext.SaveChangesAsync();
 
