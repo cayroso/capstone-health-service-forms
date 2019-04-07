@@ -4869,6 +4869,15 @@
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\images\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\scripts\bootstrap\dist\css\bootstrap-slate.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\scripts\bootstrap\dist\css\bootstrap-united.min.css" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
     Other similar extension points exist, see Microsoft.Common.targets.

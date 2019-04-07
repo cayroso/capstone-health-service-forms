@@ -3,7 +3,8 @@ var app = angular.module('app');
 
 app.controller('serverController', function ($rootScope, $http, $window, toastr) {
     const vm = this;
-    vm.baseApiUrl = 'http://192.168.0.30/hsforms/';
+    //vm.baseApiUrl = 'http://192.168.0.30/hsforms/';
+    vm.baseApiUrl = 'http://batangas.southeastasia.cloudapp.azure.com/hsforms/';
 
     vm.save = function () {
         var url = `${vm.baseApiUrl}api/account/ping`;

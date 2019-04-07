@@ -4,8 +4,9 @@
     <base href="file:///android_asset/" />
     <meta name="viewport" content="width=device-width" />
 
-    <link rel="stylesheet" href="scripts/bootstrap/dist/css/bootstrap-reboot.min.css" />
-    <link rel="stylesheet" href="scripts/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="scripts/bootstrap/dist/css/bootstrap-united.min.css" />
+    
+    <link rel="stylesheet" href="scripts/bootstrap/dist/css/bootstrap-slate.css" />
     <link rel="stylesheet" href="scripts/angular-toastr/dist/angular-toastr.min.css" />
     <link rel="stylesheet" href="fonts/fontawesome-free/css/fontawesome.min.css" />
     <link rel="stylesheet" href="fonts/fontawesome-free/css/solid.min.css" />
@@ -13,8 +14,12 @@
 </head>
 <body class="container-fluid m-1" ng-controller="mainController as $main">
     <div class="row">
+		
         <div ng-if="isAuthenticated && $main.selectedPage ===''" class="col-sm-12 col-md-4">
-
+			<div class="col-sm-6 offset-2">
+				<img src="images/logo.jpg" class="img-fluid"/>
+			</div>
+			<br/>
             <div class="card p-2 text-center mb-2 bg-secondary text-white">
                 <a ng-click="$main.setPage('pages/fp/index.html')">
                     <span class="fas fa-file-excel"></span>&nbsp;Family Planning
@@ -38,7 +43,7 @@
         </div>
     </div>
 
-    <div class="pt-1" ng-include="$main.selectedPage">
+    <div class="p-1" ng-include="$main.selectedPage">
         <div class="spinner-border" role="status">
             <span class="sr-only">Loading, please wait.</span>
         </div>
