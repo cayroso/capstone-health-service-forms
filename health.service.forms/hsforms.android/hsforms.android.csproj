@@ -4878,6 +4878,24 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\scripts\bootstrap\dist\css\bootstrap-united.min.css" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\pages\fp\add\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\pages\fp\add\index.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\pages\nepi\add\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\pages\nepi\add\index.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\pages\pnc\add\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\pages\pnc\add\index.js" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
     Other similar extension points exist, see Microsoft.Common.targets.

@@ -90,7 +90,7 @@ function controller($rootScope, $scope, $window, $http, toastr) {
             .then(function (resp) {
                 toastr.success('Form successfully uploaded to server', 'Success');
             }, function (err) {
-                toastr.error('Upload failed', 'Failed');
+                toastr.error(JSON.stringify(err), 'Failed');
             });
     };
 }

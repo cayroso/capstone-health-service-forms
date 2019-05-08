@@ -1,0 +1,26 @@
+﻿<div ng-controller="formNepiAddController as $ctrl">
+    <h4>Add Nutrition and EPI Program Form</h4>
+    <a ui-sref="formNepi" class="btn btn-outline-secondary">
+        <span class="fas fa-backward"></span>&nbsp;Back
+    </a>
+    <button ng-click="$ctrl.save()" class="btn btn-outline-warning">Save</button>
+
+    <hr />
+
+    <div class="form-group">
+        <b class="form-check-label" for="barangay">BARANGAY</b>
+        <input ng-model="$ctrl.item.barangay" class="form-control" type="text" id="barangay" />
+    </div>
+    <div class="form-group">
+        <b class="form-check-label" for="municipality">MUNICIPALITY</b>
+        <input ng-model="$ctrl.item.municipality" class="form-control" type="text" id="municipality" />
+    </div>
+    <div class="form-group">
+        <b class="form-check-label" for="province">PROVINCE</b>
+        <input ng-model="$ctrl.item.province" class="form-control" type="text" id="province" />
+    </div>
+    <div class="form-group">
+        <b class="form-check-label" for="region">REGION</b>
+        <input ng-model="$ctrl.item.region" class="form-control" type="text" id="region" />
+    </div>
+</div>

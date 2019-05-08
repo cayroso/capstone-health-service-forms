@@ -5,45 +5,44 @@
     <meta name="viewport" content="width=device-width" />
 
     <link rel="stylesheet" href="scripts/bootstrap/dist/css/bootstrap-united.min.css" />
-    
-    <link rel="stylesheet" href="scripts/bootstrap/dist/css/bootstrap-slate.css" />
+
+    <!--<link rel="stylesheet" href="scripts/bootstrap/dist/css/bootstrap-slate.css" />-->
     <link rel="stylesheet" href="scripts/angular-toastr/dist/angular-toastr.min.css" />
     <link rel="stylesheet" href="fonts/fontawesome-free/css/fontawesome.min.css" />
     <link rel="stylesheet" href="fonts/fontawesome-free/css/solid.min.css" />
 
 </head>
 <body class="container-fluid m-1" ng-controller="mainController as $main">
-    <div class="row">
-		
-        <div ng-if="isAuthenticated && $main.selectedPage ===''" class="col-sm-12 col-md-4">
-			<div class="col-sm-6 offset-2">
-				<img src="images/logo.jpg" class="img-fluid"/>
-			</div>
-			<br/>
-            <div class="card p-2 text-center mb-2 bg-secondary text-white">
-                <a ng-click="$main.setPage('pages/fp/index.html')">
-                    <span class="fas fa-file-excel"></span>&nbsp;Family Planning
-                </a>
-            </div>
-            <div class="card p-2 text-center mb-2 bg-secondary text-white">
-                <a ng-click="$main.setPage('pages/nepi/index.html')">
-                    <span class="fas fa-file-excel"></span>&nbsp;Nutrition and EPI Program
-                </a>
-            </div>
-            <div class="card p-2 text-center mb-2 bg-secondary text-white">
-                <a ng-click="$main.setPage('pages/pnc/index.html')">
-                    <span class="fas fa-file-excel"></span>&nbsp;Prenatal Care
-                </a>
-            </div>
-            <div class="card p-1 text-center mb-2 bg-secondary text-white">
-                <a ng-click="$main.resetSettings()">
-                    <span class="fas fa-cogs"></span>&nbsp;Reset Settings
-                </a>
-            </div>
+
+    <div ng-if="isAuthenticated && $main.selectedPage ===''" class="m-1">
+        <div class="text-center">
+            <img src="images/logo.jpg" class="img-fluid" />
+        </div>
+        <br />
+        <div class="card p-2 text-center mb-2 bg-secondary text-white">
+            <a ng-click="$main.setPage('pages/fp/index.html')" class="btn-lg">
+                <span class="fas fa-file-excel"></span>&nbsp;Family Planning
+            </a>
+        </div>
+        <div class="card p-2 text-center mb-2 bg-secondary text-white">
+            <a ng-click="$main.setPage('pages/nepi/index.html')" class="btn-lg">
+                <span class="fas fa-file-excel"></span>&nbsp;Nutrition and EPI Program
+            </a>
+        </div>
+        <div class="card p-2 text-center mb-2 bg-secondary text-white">
+            <a ng-click="$main.setPage('pages/pnc/index.html')" class="btn-lg">
+                <span class="fas fa-file-excel"></span>&nbsp;Prenatal Care
+            </a>
+        </div>
+        <div class="card p-1 text-center mb-2 bg-secondary text-white">
+            <a ng-click="$main.resetSettings()" class="btn-lg">
+                <span class="fas fa-cogs"></span>&nbsp;Reset Settings
+            </a>
         </div>
     </div>
 
-    <div class="p-1" ng-include="$main.selectedPage">
+
+    <div class="p-0 m-0" ng-include="$main.selectedPage">
         <div class="spinner-border" role="status">
             <span class="sr-only">Loading, please wait.</span>
         </div>
@@ -63,6 +62,7 @@
 
     <!--family planning-->
     <script type="text/javascript" src="pages/fp/index.js"></script>
+    <script type="text/javascript" src="pages/fp/add/index.js"></script>
     <script type="text/javascript" src="pages/fp/view/index.js"></script>
     <script type="text/javascript" src="pages/fp/edit/index.js"></script>
 
@@ -72,6 +72,7 @@
 
     <!--Nutrition and EPI-->
     <script type="text/javascript" src="pages/nepi/index.js"></script>
+    <script type="text/javascript" src="pages/nepi/add/index.js"></script>
     <script type="text/javascript" src="pages/nepi/view/index.js"></script>
     <script type="text/javascript" src="pages/nepi/edit/index.js"></script>
 
@@ -81,6 +82,7 @@
 
     <!--Prenatal Care-->
     <script type="text/javascript" src="pages/pnc/index.js"></script>
+    <script type="text/javascript" src="pages/pnc/add/index.js"></script>
     <script type="text/javascript" src="pages/pnc/view/index.js"></script>
     <script type="text/javascript" src="pages/pnc/edit/index.js"></script>
 

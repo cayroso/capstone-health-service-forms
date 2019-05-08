@@ -35,6 +35,11 @@ function controller($rootScope, $scope, $window, $http, toastr) {
             });
     };
 
+    vm.add = function () {
+        $rootScope.selectedForm1 = null;
+        $rootScope.setPage('pages/pnc/add/index.html');
+    };
+
     vm.view = function (form) {
         $rootScope.selectedForm1 = form;
         $rootScope.setPage('pages/pnc/view/index.html');
